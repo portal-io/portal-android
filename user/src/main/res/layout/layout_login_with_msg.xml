@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_sms_code"
+    android:layout_width="300dp"
+    android:layout_height="35dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="18dp">
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_sms_code"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
+        android:layout_alignParentBottom="true"
+        app:hint="@string/user_hint_msm"
+        app:inputType="phone" />
+
+    <Button
+        android:id="@+id/btn_fetch_code"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/user_bg_validate_select"
+        android:enabled="false"
+        android:text="@string/user_fetch_code"
+        android:textColor="@color/color_validate_code_btn_selector"
+        android:textSize="@dimen/font_42" />
+
+</RelativeLayout>

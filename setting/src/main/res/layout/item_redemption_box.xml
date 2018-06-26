@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_redemption_box"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/bg_redemption_box"
+    android:transitionName="@string/convert_name">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:text="&#160;请输入兑换码"
+        android:textColor="@color/color8"
+        android:textSize="@dimen/font_45" />
+
+</RelativeLayout>

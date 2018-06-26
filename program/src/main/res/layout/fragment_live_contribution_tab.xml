@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    >
+
+    <TextView
+        android:id="@+id/tv_total_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="43dp"
+        android:paddingRight="43dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:gravity="center_horizontal"
+        />
+
+    <FrameLayout
+        android:id="@+id/layout_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_total_des"
+        android:background="@color/color12">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="48dp" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@id/layout_tablayout"
+        android:background="@color/color11" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_line"
+        />
+
+    <com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout
+        android:id="@+id/emptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

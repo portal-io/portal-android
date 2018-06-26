@@ -1,0 +1,32 @@
+<resources>
+    <dimen name="line_extra_space">7dp</dimen>
+
+
+    <!-- 间隔距离大小 数字为设计搞上的数值，单位为px  -->
+    <dimen name="space_6">2dp</dimen>
+    <dimen name="space_9">3dp</dimen>
+    <dimen name="space_12">4dp</dimen>
+    <dimen name="space_15">5dp</dimen>
+    <dimen name="space_18">6dp</dimen>
+    <dimen name="space_21">7dp</dimen>
+    <dimen name="space_22">7.3dp</dimen>
+    <dimen name="space_24">8dp</dimen>
+    <dimen name="space_30">10dp</dimen>
+    <dimen name="space_33">11dp</dimen>
+    <dimen name="space_36">12dp</dimen>
+    <dimen name="space_42">14dp</dimen>
+    <dimen name="space_45">15dp</dimen>
+    <dimen name="space_48">16dp</dimen>
+    <dimen name="space_60">20dp</dimen>
+    <dimen name="space_63">21dp</dimen>
+    <dimen name="space_66">22dp</dimen>
+    <dimen name="space_72">24dp</dimen>
+    <dimen name="space_78">26dp</dimen>
+    <dimen name="space_90">30dp</dimen>
+    <dimen name="space_96">32dp</dimen>
+    <dimen name="space_99">33dp</dimen>
+    <dimen name="space_108">36dp</dimen>
+    <dimen name="space_120">40dp</dimen>
+    <dimen name="space_168">56dp</dimen>
+    <dimen name="space_204">68dp</dimen>
+</resources>

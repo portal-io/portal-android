@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/layout_alipay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_color10_color12_passed_selector">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/ic_pay_alipay"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="支付宝"
+                android:textColor="@color/color3"
+                android:textSize="16sp" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="50dp"
+            android:background="@color/color10" />
+
+        <FrameLayout
+            android:id="@+id/layout_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_color10_color12_passed_selector">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/ic_pay_wechat"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="微信支付"
+                android:textColor="@color/color3"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/color10" />
+
+    <FrameLayout
+        android:id="@+id/layout_jingbi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_btn_color10_color12_passed_selector">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="鲸币支付"
+            android:textColor="@color/color3"
+            android:textSize="16sp" />
+    </FrameLayout>
+</LinearLayout>

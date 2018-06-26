@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ViewStub
+        android:id="@+id/vs_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/layout_line" />
+
+    <FrameLayout
+        android:id="@+id/view_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ViewStub
+                android:id="@+id/vs_lpic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_pic" />
+
+            <ViewStub
+                android:id="@+id/vs_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal">
+
+            <ViewStub
+                android:id="@+id/vs_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_text" />
+
+            <ViewStub
+                android:id="@+id/vs_rpic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_pic" />
+
+            <ViewStub
+                android:id="@+id/vs_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout="@layout/layout_checkbox" />
+
+            <ViewStub
+                android:id="@+id/vs_segment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout="@layout/layout_segment" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <ViewStub
+        android:id="@+id/vs_bottom_line"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/layout_line" />
+</LinearLayout>

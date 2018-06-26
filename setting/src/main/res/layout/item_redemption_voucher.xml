@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_color12_frame1_color1_a20_fillet5"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:translationZ="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="21dp"
+                android:textColor="@color/color20"
+                android:textSize="@dimen/font_45" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_toLeftOf="@id/tv_price"
+                android:textColor="@color/color3"
+                android:textSize="@dimen/font_45" />
+
+            <TextView
+                android:id="@+id/tv_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color1"
+                android:textSize="@dimen/font_45"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@mipmap/ic_round_slot" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/tv_look"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/color_look"
+                android:textSize="@dimen/font_36" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="332dp"
+                android:layout_height="36dp"
+                android:layout_toLeftOf="@id/tv_look"
+                android:gravity="center_vertical"
+                android:text="购买于2017年3月12日"
+                android:textColor="@color/color8"
+                android:textSize="@dimen/font_36" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

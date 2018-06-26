@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_detail"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- height: 276px -->
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/layout_program_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/tv_program_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/color3"
+            android:textStyle="bold"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="24dp"
+            android:textSize="@dimen/font_54"
+            app:layout_marginTopPercent="8.55%h"
+            />
+
+        <ImageView
+            android:id="@+id/iv_play_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_program_name"
+            android:src="@mipmap/detail_play"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="12dp"
+            app:layout_marginTopPercent="4.27%h"
+            />
+
+        <TextView
+            android:id="@+id/tv_play_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_program_name"
+            android:layout_toRightOf="@id/iv_play_icon"
+            android:textColor="@color/color6"
+            android:layout_marginLeft="6dp"
+            android:textSize="@dimen/font_36"
+            android:layout_marginTop="12dp"
+            app:layout_marginTopPercent="4.27%h"
+            />
+
+        <TextView
+            android:id="@+id/tv_have_voucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_program_name"
+            android:layout_toRightOf="@id/tv_play_count"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/bg_color2a00_frame1_color15a70_fillet18"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:text="已有观看券"
+            android:textColor="@color/color15_alpha_70"
+            android:textSize="@dimen/font_30"
+            android:visibility="gone"
+            app:layout_marginTopPercent="4.27%h"/>
+        <!--<View-->
+            <!--android:id="@+id/view_vertical_line"-->
+            <!--android:layout_width="1px"-->
+            <!--android:layout_height="14dp"-->
+            <!--android:layout_below="@id/tv_program_name"-->
+            <!--android:layout_toRightOf="@id/tv_play_count"-->
+            <!--android:background="@color/color6"-->
+            <!--android:layout_marginTop="@dimen/space_36"-->
+            <!--android:layout_marginLeft="@dimen/space_36"-->
+            <!--app:layout_marginTopPercent="4.27%h"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_duration"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/tv_program_name"-->
+            <!--android:layout_toRightOf="@id/view_vertical_line"-->
+            <!--android:textColor="@color/color6"-->
+            <!--android:layout_marginLeft="@dimen/space_18"-->
+            <!--android:textSize="@dimen/font_36"-->
+            <!--android:layout_marginTop="@dimen/space_36"-->
+            <!--app:layout_marginTopPercent="4.27%h"-->
+            <!--/>-->
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color9"
+        android:layout_below="@id/layout_program_title"
+        android:layout_marginTop="24dp"
+        app:layout_marginTopPercent="8.55%h"
+        />
+    <include
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_below="@id/view_line"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        layout="@layout/layout_detail_buttons"
+        app:layout_heightPercent="34.91%h"
+        />
+
+    <View
+        android:id="@+id/view_line2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_30"
+        android:background="@color/color10"
+        android:layout_below="@id/layout_buttons"
+        app:layout_heightPercent="3.56%h"
+        />
+
+    <RelativeLayout
+        android:id="@+id/layout_poster_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_line2"
+        >
+        <ImageView
+            android:id="@+id/iv_poster_img"
+            android:layout_width="@dimen/size_120"
+            android:layout_height="@dimen/size_120"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@id/iv_poster_img"
+            android:layout_marginLeft="8dp"
+            >
+            <TextView
+                android:id="@+id/tv_poster_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color3"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:textSize="@dimen/font_45"
+                />
+            <TextView
+                android:id="@+id/tv_poster_fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color6"
+                android:textSize="@dimen/font_36"
+                android:layout_marginTop="6dp"
+                android:singleLine="true"
+                android:maxLength="15"
+                />
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/layout_follow"
+            android:layout_width="@dimen/size_192"
+            android:layout_height="@dimen/size_84"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_btn_follow_selector"
+            android:orientation="horizontal"
+            android:layout_marginRight="20dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_follow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/btn_follow_selector"
+                android:drawablePadding="3dp"
+                android:text="关注"
+                android:textColor="@color/color_text_follow_selector"
+                android:textSize="@dimen/font_39"
+                />
+        </FrameLayout>
+    </RelativeLayout>
+
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

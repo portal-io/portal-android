@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_free_pay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_live_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/bg_pay"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_live_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_36" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:includeFontPadding="false"
+            android:text="立即购买"
+            android:textColor="@color/color15"
+            android:textSize="@dimen/font_36" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layout_need_pay"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_color2a20_fillet18">
+
+        <TextView
+            android:id="@+id/tv_need_pay_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="34dp"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_45" />
+
+        <TextView
+            android:id="@+id/tv_need_pay_buy"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="77dp"
+            android:background="@drawable/bg_color15_fillet12"
+            android:gravity="center"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_45" />
+
+        <TextView
+            android:id="@+id/tv_need_pay_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="32dp"
+            android:text="已拥有兑换码？点击这里兑换"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_36" />
+    </FrameLayout>
+</FrameLayout>

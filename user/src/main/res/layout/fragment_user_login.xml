@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/layout_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp">
+
+        <include layout="@layout/layout_user_login" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:background="@drawable/user_login_selector"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/user_btn_login"
+        android:textColor="@color/color12"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/layout_login_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_login_enter" />
+    </LinearLayout>
+
+</RelativeLayout>

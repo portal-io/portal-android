@@ -1,0 +1,20 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="video_cover_height">202.7dp</dimen>
+    <dimen name="item_recommend_text_height">78dp</dimen>
+    <dimen name="line_spacing_extra">7dp</dimen>
+    <dimen name="divider_height">6dp</dimen>
+    <dimen name="border_radius">3dp</dimen>
+    <dimen name="addition">8dp</dimen>
+    <dimen name="default_cornerRadius">2dp</dimen>
+    <dimen name="main_tab_width">60dp</dimen>
+    <dimen name="margin_parent_bigger">13.3dp</dimen>
+    <dimen name="margin_parent_big">14dp</dimen>
+    <dimen name="line_height">10dp</dimen>
+    <dimen name="bottom_tab_height">44dp</dimen>
+    <dimen name="size_222">74dp</dimen>
+
+
+</resources>

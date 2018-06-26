@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color2_alpha_50"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/rl_redeem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_redeem_select_box"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_top_fillet"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="131dp"
+                    android:layout_height="1px"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/color9" />
+
+
+                <View
+                    android:layout_width="131dp"
+                    android:layout_height="1px"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/color9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="11dp"
+                    android:text="订单"
+                    android:textColor="@color/color9"
+                    android:textSize="@dimen/font_30" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/view_recyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_line"
+                    android:layout_marginTop="23dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="332dp"
+                android:layout_height="8dp"
+                android:background="@mipmap/ic_round_slot" />
+
+            <FrameLayout
+                android:layout_width="332dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_bottom_fillet">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color8"
+                    android:textSize="@dimen/font_36" />
+
+                <TextView
+                    android:id="@+id/tv_whaley_currency_over"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center_vertical"
+                    android:paddingRight="15dp"
+                    android:textColor="@color/color8"
+                    android:textSize="@dimen/font_36" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_pay_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <ViewStub
+                android:id="@+id/vs_pay_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/pay_view" />
+
+            <ViewStub
+                android:id="@+id/vs_three_kinds_pay_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/three_kinds_pay_view" />
+
+            <TextView
+                android:id="@+id/tv_reappear"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/color12"
+                android:gravity="center"
+                android:text="重新支付"
+                android:textColor="@color/color3"
+                android:textSize="@dimen/font_45"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/view_crude_line"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/color10"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/color12"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/color1"
+                android:textSize="@dimen/font_45" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

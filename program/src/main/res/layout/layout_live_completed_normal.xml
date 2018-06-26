@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_live_completed"
+        android:textColor="@color/color12"
+        android:textSize="24sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv_play_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/color12"
+        android:textSize="@dimen/font_42" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/space_90"
+        android:layout_marginRight="@dimen/space_90"
+        android:layout_marginTop="28dp"
+        android:background="@color/color12_alpha_50" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color12_alpha_40"
+        android:textSize="@dimen/font_36"
+        android:layout_marginTop="@dimen/space_90"
+        android:text="@string/text_live_completed_tip"
+        />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/size_480"
+        android:layout_height="@dimen/size_114"
+        android:layout_marginTop="@dimen/space_60"
+        android:textColor="@color/color12_alpha_70"
+        android:textSize="@dimen/font_45"
+        android:background="@drawable/bg_btn_corner_rectangle_live_completed"
+        android:text="返回"
+        />
+
+
+
+</LinearLayout>

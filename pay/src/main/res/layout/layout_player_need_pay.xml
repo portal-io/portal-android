@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/tv_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="60dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/color12"
+        android:textSize="@dimen/font_36"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:background="@drawable/bg_pay"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/needpay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_39" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_price"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="86.7dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bg_btn_pay"
+                android:text="立即购买"
+                android:textColor="@color/color12"
+                android:textSize="@dimen/font_39"
+                />
+
+            <TextView
+                android:id="@+id/btn_return"
+                android:layout_width="86.7dp"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_color2a00_frame1_color11_fillet18"
+                android:gravity="center"
+                android:text="重新试看"
+                android:textColor="@color/color11"
+                android:textSize="@dimen/font_39" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

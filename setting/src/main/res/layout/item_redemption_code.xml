@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_redemption_code"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/bg_redemption_code_selector">
+
+    <TextView
+        android:id="@+id/tv_redemption"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_color12_frame1_color8_fillet5"
+        android:gravity="center"
+        android:text="兑换"
+        android:textColor="@color/color4" />
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:maxLines="1"
+        android:maxWidth="140dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/color1"
+        android:textSize="@dimen/font_54" />
+
+    <TextView
+        android:id="@+id/tv_association"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/tv_name"
+        android:background="@drawable/bg_color9_fillet2"
+        android:gravity="center"
+        android:maxLines="1"
+        android:maxWidth="100dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/color12"
+        android:textSize="@dimen/font_33" />
+</RelativeLayout>

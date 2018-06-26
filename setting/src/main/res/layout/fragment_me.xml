@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/layout_user"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <com.whaley.biz.setting.widget.ZZoomImageView
+            android:id="@+id/view_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/sign_in_bg" />
+
+        <include
+            layout="@layout/layout_login_setting_unlogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            layout="@layout/layout_login_setting_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/layout_blank"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_below="@id/layout_user"></View>
+
+    <LinearLayout
+        android:id="@+id/layout_card"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/bg_me_card"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        android:translationZ="3dp">
+
+    </LinearLayout>
+
+    <com.whaley.biz.setting.widget.BounceScrollView
+        android:id="@+id/layout_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_blank"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/me_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+    </com.whaley.biz.setting.widget.BounceScrollView>
+
+</RelativeLayout>

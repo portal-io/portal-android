@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emptyLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yz.pullable.PullableLayout
+        android:id="@+id/pullableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:headerViewId="@+id/rl_header"
+        app:scrollViewId="@+id/viewpager">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/bg_cp_detail" />
+
+            <FrameLayout
+                android:id="@+id/fl_avatar"
+                android:layout_width="71dp"
+                android:layout_height="71dp"
+                android:layout_below="@id/header"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-35dp"
+                android:background="@drawable/bg_white_circle">
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="67dp"
+                    android:layout_height="67dp"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fl_avatar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:textColor="@color/color3"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_fans_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/color5"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_fans_num"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/color5"
+                android:textSize="12sp" />
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="41dp"
+                android:layout_below="@id/tv_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_below="@id/tabLayout"
+                android:background="@color/color10" />
+
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </com.yz.pullable.PullableLayout>
+
+    <RelativeLayout
+        android:id="@+id/shade_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scaleType="center"
+            android:src="@drawable/back_white_selector" />
+
+        <TextView
+            android:id="@+id/tv_name_shadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:alpha="0"
+            android:gravity="center"
+            android:maxLength="10"
+            android:textColor="@color/color3"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_follow"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_btn_detail_follow_selector"
+            android:text="+关注"
+            android:textColor="@color/color8_color12_selector"
+            android:textSize="13sp" />
+
+        <View
+            android:id="@+id/title_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/detail_gray_default"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout>

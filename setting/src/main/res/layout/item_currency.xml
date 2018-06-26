@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp">
+
+    <LinearLayout
+        android:id="@+id/layout_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_name"
+            android:textColor="@color/color3"
+            android:textSize="16sp"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_preferName"
+            android:textColor="@color/color20"
+            android:textSize="12sp"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="14dp"
+            android:id="@+id/tv_prefer"
+            android:background="@drawable/bg_prefer"
+            android:gravity="center"
+            android:textColor="@color/color12"
+            android:textSize="9sp"
+            android:text="限时特惠"
+            android:layout_marginLeft="5dp"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_content"
+            android:textColor="@color/color20"
+            android:textSize="12sp"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_preferContent"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/color20"
+            android:textSize="12sp"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="26.7dp"
+        android:id="@+id/tv_recharge"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_recharge"
+        android:textColor="@color/color1"
+        android:textSize="14sp"
+        android:text="充值"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color9"/>
+
+</RelativeLayout>

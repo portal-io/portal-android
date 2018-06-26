@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_lottery"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignWithParentIfMissing="true"
+    android:layout_below="@+id/view_live_title"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="38dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_114"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/bg_sweepstakes_gradient"
+        android:gravity="center_vertical"
+        android:paddingLeft="56dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/color12"
+        android:textSize="10dp"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/iv_chest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:minHeight="54dp"
+        android:minWidth="54dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_sweepstakes_box" />
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@mipmap/back_white" android:state_pressed="false" /><!--选中时效果-->
+    <item android:drawable="@mipmap/back_white_press" android:state_pressed="true" /><!--未选中时效果-->
+</selector>

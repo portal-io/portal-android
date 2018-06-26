@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_user_name"
+        android:layout_width="300dp"
+        android:layout_height="27dp"
+        android:layout_gravity="center_horizontal"
+        app:hint="@string/user_hint_phone"
+        app:inputType="phone" />
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_password"
+        android:layout_width="300dp"
+        android:layout_height="27dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="23dp"
+        app:hint="@string/user_hint_psw"
+        app:inputType="password" />
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp">
+        <!-- be tired of spannable text , do it in another way-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_safe_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/user_safe_login"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/font_36" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color3" />
+        </LinearLayout>
+
+        <!-- be tired of spannable text , do it in another way-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_forget_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/user_forget_pwd"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/font_36" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color3" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

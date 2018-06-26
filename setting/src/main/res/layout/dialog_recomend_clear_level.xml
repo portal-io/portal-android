@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_marginTop="33.3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ico_detect_complete"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="推荐清晰度：高清"
+                android:textColor="@color/color3"
+                android:textSize="17sp"
+                android:lineSpacingExtra="13.3dp"
+                android:maxWidth="255dp"
+                android:layout_marginTop="40dp"
+                />
+            <LinearLayout
+                android:id="@+id/layout_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:gravity="center_vertical"
+                >
+                <CheckBox
+                    android:id="@+id/cb_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:button="@drawable/checkbox_clear_level"
+                    android:checked="true"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/color7"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="8dp"
+                    android:text="观看时默认采用该清晰度"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="7dp"
+                    android:maxWidth="150dp" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/tv_vice_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color7"
+                android:textSize="13sp"
+                android:lineSpacingExtra="8dp"
+                android:text="@string/text_detect_tip_clear_choose"
+                android:layout_gravity="center_horizontal"
+                android:maxWidth="150dp"
+                android:layout_marginBottom="20dp"
+                />
+        </LinearLayout>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="@color/color9" />
+    <LinearLayout
+        android:id="@+id/confirm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/iv_confirm"
+                android:background="@drawable/bg_btn_below_round_selector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="完成"
+                android:textColor="@color/color3"
+                android:textSize="17sp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?><!-- height: 276px -->
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_program_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/playerview"
+    app:layout_heightPercent="14.3%"
+    app:layout_widthPercent="100%w">
+
+    <TextView
+        android:id="@+id/tv_program_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="中国新歌声学院独家揭秘"
+        android:textColor="@color/color3"
+        android:textStyle="bold"
+        app:layout_paddingLeftPercent="3.9%w"
+        app:layout_paddingTopPercent="26%h"
+        app:layout_textSizePercent="19.6%h" />
+
+    <ImageView
+        android:id="@+id/iv_play_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_program_name"
+        android:src="@mipmap/detail_play"
+        app:layout_paddingLeftPercent="3.9%w"
+        app:layout_paddingTopPercent="13%h" />
+
+    <TextView
+        android:id="@+id/tv_play_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_program_name"
+        android:layout_toRightOf="@id/iv_play_icon"
+        android:text="13.9万播放"
+        android:textColor="@color/color6"
+        app:layout_paddingLeftPercent="1.6%w"
+        app:layout_paddingTopPercent="13%h"
+        app:layout_textSizePercent="13%h" />
+
+    <View
+        android:id="@+id/view_vertical_line"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_program_name"
+        android:layout_toRightOf="@id/tv_play_count"
+        android:background="@color/color6"
+        app:layout_heightPercent="15.5%h"
+        app:layout_marginLeftPercent="3.3%w"
+        app:layout_marginTopPercent="13%h"
+        app:layout_widthPercent="0.2%w" />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_program_name"
+        android:layout_toRightOf="@id/view_vertical_line"
+        android:text="时长: 6分56秒"
+        android:textColor="@color/color6"
+        app:layout_paddingLeftPercent="3.3%w"
+        app:layout_paddingTopPercent="13%h"
+        app:layout_textSizePercent="13%h" />
+
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/layout_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_program_name"
+        android:layout_toRightOf="@id/tv_play_count"
+        app:auto_select_effect="false"
+        app:layout_paddingLeftPercent="3.3%w"
+        app:layout_paddingTopPercent="13%h" />
+
+
+    <TextView
+        android:id="@+id/tv_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="9.7分"
+        android:textColor="@color/color6"
+        app:layout_marginRightPercent="3.8%w"
+        app:layout_marginTopPercent="26%h"
+        app:layout_textSizePercent="14.7%h" />
+
+    <RatingBar
+        android:id="@+id/rb_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/tv_rate"
+        android:layout_toRightOf="@id/tv_program_name"
+        android:isIndicator="true"
+        android:progressDrawable="@drawable/my_rating_bar"
+        android:stepSize="0.5"
+        app:layout_heightPercent="14.4%"
+        app:layout_marginLeftPercent="3.3%w"
+        app:layout_marginRightPercent="3.3%w"
+        app:layout_marginTopPercent="26%h" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

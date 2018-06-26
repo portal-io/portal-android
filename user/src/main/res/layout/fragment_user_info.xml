@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12">
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/sv_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:nameText="@string/user_avatar"
+        app:viewHeight="@dimen/size_255" />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/sv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sv_avatar"
+        app:nameText="@string/user_name"
+        app:rightPic="@mipmap/setting_special_into"
+        app:contentTextSize="15dp"/>
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/sv_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sv_name"
+        app:contentText="@string/user_go_to_reset"
+        app:nameText="@string/user_password"
+        app:rightPic="@mipmap/setting_special_into"
+        app:contentTextSize="15dp"/>
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/sv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sv_password"
+        app:nameText="@string/user_phone"
+        app:rightPic="@mipmap/setting_special_into"
+        app:contentTextSize="15dp"/>
+
+    <TextView
+        android:id="@+id/btn_logout"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/sv_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/bg_logout"
+        android:gravity="center"
+        android:text="@string/text_logout"
+        android:textSize="15sp"
+        android:textColor="@color/color6"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_login_enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_login_enter" />
+    </LinearLayout>
+</RelativeLayout>

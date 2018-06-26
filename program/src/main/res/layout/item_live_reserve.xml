@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color12">
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_574"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/iv_corner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="@dimen/size_240"
+            android:layout_height="@dimen/size_108"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/iv_pic"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/bg_btn_reserve_selector"
+            android:gravity="center"
+            android:text="预约"
+            android:textColor="@color/color_reserve_selector" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_pic"
+            android:layout_marginTop="7dp"
+            android:layout_toLeftOf="@id/tv_add"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_42" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/color7"
+            android:textSize="@dimen/font_33" />
+
+        <TextView
+            android:id="@+id/tv_have_voucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/tv_content"
+            android:background="@drawable/bg_color2a00_frame1_color15a70_fillet18"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="1dp"
+            android:text="已有观看券"
+            android:textColor="@color/color15_alpha_70"
+            android:textSize="@dimen/font_30"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="67dp"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color9"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="@dimen/space_60"
+        />
+
+    <ImageView
+        android:id="@+id/iv_image_bg"
+        android:layout_width="38dp"
+        android:layout_height="44dp"
+        android:src="@mipmap/bg_contribute_head_first"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="11dp"
+        />
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="@dimen/size_102"
+        android:layout_height="@dimen/size_102"
+        android:scaleType="centerCrop"
+        android:layout_alignLeft="@id/iv_image_bg"
+        android:layout_alignTop="@id/iv_image_bg"
+        android:src="@mipmap/default_circle_4"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_39"
+        android:textColor="@color/color3"
+        android:text="NO.1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_centerVertical="true"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_image_bg"
+        android:layout_toLeftOf="@id/tv_rank"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="7dp"
+        android:layout_centerVertical="true"
+        >
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_36"
+            android:text="鞠婧玮"
+            />
+        <TextView
+            android:id="@+id/tv_contribution_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/font_33"
+            android:layout_marginTop="@dimen/space_15"
+            android:text="\@傲娇的小仙女 等230位粉丝贡献了3000鲸币 "
+            />
+    </LinearLayout>
+
+</RelativeLayout>

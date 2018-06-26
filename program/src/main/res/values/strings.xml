@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Program</string>
+
+    <!--  关注 -->
+    <string name="title_follow_my">我的关注</string>
+    <string name="empty_no_follow">您还没关注任何人哦</string>
+    <string name="empty_no_login">登录后才能看到您关注的内容哦</string>
+    <string name="search_load_empty">抱歉，未找到相关视频</string>
+    <string name="text_search">搜索</string>
+    <string name="text_more">更多</string>
+    <string name="dialog_follow">您需要登录才能关注该发布者\n确定登录吗？</string>
+    <string name="title_follow_recommend">推荐关注</string>
+    <string name="dialog_reserve">您需要登录才能预约\n确定登录吗？</string>
+    <string name="dialog_my_reserve">您需要登录才能查看预约\n确定登录吗？</string>
+    <string name="dialog_buy_pay">您需要登录才能购买\n确定登录吗？</string>
+    <string name="dialog_video_caching">您需要登录才能缓存视频到本地\n确定登录吗？</string>
+    <string name="pay_no_voucher">无法购买相关观看券</string>
+    <string name="pay_live_content">购买成功后，同时开通直播回顾观看权</string>
+    <string name="pay_recorded_content">*视频版权期限截止至</string>
+    <string name="dialog_collection">您需要登录才能加入播单\n确定登录吗？</string>
+    <string name="text_share_topic_title">分享专题至</string>
+    <string name="text_share_program_package_title">分享节目包至</string>
+    <string name="text_share_program_set_title">分享合集至</string>
+    <string name="text_share_sina">新浪微博</string>
+    <string name="text_share_wx">微信</string>
+    <string name="text_share_wxfrends">朋友圈</string>
+    <string name="text_share_qq">QQ好友</string>
+    <string name="text_share_qzone">QQ空间</string>
+    <string name="text_contribution_rank_tip">全网排名第</string>
+    <string name="text_live_completed">直播已结束</string>
+    <string name="text_live_completed_tip">直播回顾稍后呈现，先去看看其他直播吧!</string>
+    <string name="drama_split_toast_text">为保证体验，互动剧的VR模式请在GearVR小米眼镜等设备中下载体验</string>
+    <string name="drama_no_media_url">所选分支无法播放，请选择其它分支</string>
+    <string name="spring_leave_play">是否离开当前播放,去往活动页面?</string>
+    <string name="spring_leave_play_yes">离开</string>
+    <string name="spring_leave_play_no">继续观看</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_input_new_pwd"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_password1"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_gravity="center_horizontal"
+        app:hint="@string/user_input_new_password"
+        app:inputType="password"></com.whaley.biz.user.ui.widgets.EditLayout>
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_password2"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        app:hint="@string/user_input_new_password_again"
+        app:inputType="password"></com.whaley.biz.user.ui.widgets.EditLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:text="@string/user_edit_pwd"
+        android:textColor="@color/color8"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/bg_login_selector"
+        android:gravity="center"
+        android:text="@string/user_button_confirm"
+        android:textColor="@color/color12"
+        android:visibility="gone" />
+
+</LinearLayout>

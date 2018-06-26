@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_186">
+
+        <ImageView
+            android:id="@+id/iv_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size_120"
+            android:padding="@dimen/size_15"
+            android:src="@mipmap/user_delete_input" />
+
+        <EditText
+            android:id="@+id/et_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_120"
+            android:layout_toLeftOf="@id/iv_clear"
+            android:background="@null"
+            android:hint="@string/user_hint_name"
+            android:textColor="@color/color4"
+            android:textSize="@dimen/font_45" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/size_120"
+        android:layout_marginRight="@dimen/size_120"
+        android:background="@color/color3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_120"
+        android:layout_marginTop="@dimen/size_20"
+        android:text="@string/user_edit_nickname"
+        android:textColor="@color/text_input_hint_color"
+        android:textSize="10sp" />
+</LinearLayout>

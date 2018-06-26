@@ -1,0 +1,45 @@
+ext {
+    android = [
+            compileSdkVersion: 23,
+            buildToolsVersion: "24.0.0 rc1",
+            applicationId    : "com.sivan.rxretrofitdemo",
+            minSdkVersion    : 16,
+            targetSdkVersion : 23,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    core = [
+            'appcontext': 'com.whaley.core:appcontext:0.0.6',
+            'bi'        : 'com.whaley.core:bi:0.3.5',
+            'debug'     : 'com.whaley.core:debug:0.2.0',
+            'image'     : 'com.whaley.core:image:0.1.0',
+            'inject'    : 'com.whaley.core:inject:0.1.0',
+            'interactor': 'com.whaley.core:interactor:0.1.0',
+            'local'     : 'com.whaley.core:local:0.1.1',
+            'network'   : 'com.whaley.core:network:0.2.0',
+            'repository': 'com.whaley.core:repository:0.2.0',
+            'router'    : 'com.whaley.core:router:0.2.0',
+            'share'     : 'com.whaley.core:share:0.2.2',
+            'uiframe'   : 'com.whaley.core:uiframe:0.1.0',
+            'utils'     : 'com.whaley.core:utils:0.2.0',
+            'widget'    : 'com.whaley.core:widget:0.6.0',
+            'uiview'    : 'com.whaley.core.widget:uiview:0.0.5'
+    ]
+
+    lib = [
+            'player'         : 'com.whaley.lib:player:0.1.4',
+            'parser'         : 'com.whaley.lib:parser:0.0.2',
+            'push'         : 'com.whaley.lib:push:0.0.2',
+            'pay'         : 'com.whaley.lib:pay:0.0.2',
+            'sign'        : 'com.whaley.lib:sign:0.0.3',
+            'appcompat-v7': 'com.android.support:appcompat-v7:25.3.1',
+            'rxandroid'   : 'io.reactivex.rxjava2:rxandroid:2.0.1',
+            'rxjava'      : 'io.reactivex.rxjava2:rxjava:2.1.1',
+            'eventbus'    : 'org.greenrobot:eventbus:3.1.1',
+            'eventbus-processor'    : 'org.greenrobot:eventbus-annotation-processor:3.1.1',
+            'butterknife'    : 'com.jakewharton:butterknife:8.4.0',
+            'butterknife-processor'    : 'com.jakewharton:butterknife-compiler:8.4.0',
+            'arouter-processor'    : 'com.alibaba:arouter-compiler:1.1.4'
+    ]
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clipChildren="false"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/layout_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="184dp"-->
+        <!--android:clipChildren="false">-->
+
+        <!--<com.whaley.core.widget.viewpager.ViewPager-->
+            <!--android:id="@+id/vp_banner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:clipChildren="false"-->
+            <!--android:clipToPadding="false"-->
+            <!--android:layout_height="184dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_marginLeft="10dp" />-->
+    <!--</FrameLayout>-->
+
+    <com.whaley.core.widget.banner.WhaleyBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:clipChildren="false"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color3"
+        android:textSize="@dimen/font_42"
+        android:singleLine="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="6dp"
+        android:textColor="@color/color7"
+        android:textSize="@dimen/font_33" />
+
+</LinearLayout>

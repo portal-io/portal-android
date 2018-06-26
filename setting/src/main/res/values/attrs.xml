@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="LargeTouchableAreaView">
+        <attr name="addition" format="dimension" />
+        <attr name="additionBottom" format="dimension" />
+        <attr name="additionLeft" format="dimension" />
+        <attr name="additionRight" format="dimension" />
+        <attr name="additionTop" format="dimension" />
+    </declare-styleable>
+
+</resources>

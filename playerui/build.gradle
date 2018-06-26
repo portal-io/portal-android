@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.0"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName(),
+                              eventBusIndex : "com.whaley.biz." + project.getName() + ".EventBusIndex"]
+            }
+        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile rootProject.ext.lib['appcompat-v7']
+    testCompile 'junit:junit:4.12'
+    compile rootProject.ext.core['router']
+    annotationProcessor rootProject.ext.lib['eventbus-processor']
+    annotationProcessor rootProject.ext.lib['arouter-processor']
+    compile rootProject.ext.lib['player']
+    compile rootProject.ext.lib['rxandroid']
+    compile rootProject.ext.lib['rxjava']
+    compile rootProject.ext.core['widget']
+    compile rootProject.ext.core['utils']
+    compile rootProject.ext.core['debug']
+    compile rootProject.ext.lib['eventbus']
+    compile 'at.wirecube:additive_animations:1.3.1'
+}

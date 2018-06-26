@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/view_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_150"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color12">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color9" />
+
+        <TextView
+            android:id="@+id/tv_whaley_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_24"
+            android:textColor="@color/color4"
+            android:textSize="@dimen/font_42" />
+
+        <TextView
+            android:id="@+id/tv_recharge"
+            android:layout_width="@dimen/size_144"
+            android:layout_height="@dimen/size_72"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_24"
+            android:layout_toRightOf="@id/tv_whaley_money"
+            android:background="@drawable/bg_gift_recharge"
+            android:gravity="center"
+            android:text="@string/recharge"
+            android:textColor="@color/color1"
+            android:textSize="@dimen/font_36" />
+
+
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size_30"
+            android:background="@drawable/bg_gift_send_selected"
+            android:gravity="center"
+            android:minWidth="90dp"
+            android:paddingLeft="@dimen/size_45"
+            android:paddingRight="@dimen/size_45"
+            android:text="@string/send_gift"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_45" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/view_gift_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view_send">
+
+        <LinearLayout
+            android:id="@+id/ll_portrait"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <com.whaley.core.widget.viewpager.ViewPager
+                android:id="@+id/view_gift"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color12"></com.whaley.core.widget.viewpager.ViewPager>
+
+            <LinearLayout
+                android:id="@+id/view_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@color/color12"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"></LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/view_member"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_above="@id/ll_portrait"
+            android:background="@color/color12"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="9dp"
+                android:gravity="center"
+                android:text="打赏成员"
+                android:textColor="@color/color3"
+                android:textSize="@dimen/font_45" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_member"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="75dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:background="@color/color9" />
+        </FrameLayout>
+    </RelativeLayout>
+</RelativeLayout>

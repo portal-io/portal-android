@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentText="uej"
+        app:contentTextColor="@color/color20"
+        app:contentTextSize="5sp"
+        app:leftPic="@mipmap/test_icon_local"
+        app:lineBg="@color/color2"
+        app:nameText="sssss"
+        app:nameTextColor="@color/color20"
+        app:nameTextSize="15sp"
+        app:rightPic="@mipmap/setting_special_into"
+        app:viewTopLine="20dp" />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentText="uej"
+        app:leftPic="@mipmap/test_icon_local"
+        app:nameText="sssss"
+        app:viewBg="@color/color1"
+        app:viewHeight="@dimen/video_cover_height" />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bottomLineBg="@color/color18"
+        app:contentText="uej"
+        app:lineBg="#000000"
+        app:nameText="sssss"
+        app:rightPic="@mipmap/setting_special_into"
+        app:viewBg="@drawable/test_item_bg"
+        app:viewBottomLine="10dp"
+        app:viewTopLine="20dp" />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentText="uej"
+        app:lineBg="@color/color14"
+        app:nameText="sssss"
+        app:rightPic="@mipmap/setting_special_into"
+        app:topLineBg="@color/color15"
+        app:viewBg="@drawable/test_item_bg"
+        app:viewBottomLine="10dp"
+        app:viewTopLine="20dp " />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentText="uej"
+        app:nameText="sssss" />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentText="uej"
+        app:nameText="sssss" />
+
+    <com.whaley.biz.common.widget.SettingViewLayout
+        android:id="@+id/test7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentText="uej"
+        app:nameText="sssss">
+
+    </com.whaley.biz.common.widget.SettingViewLayout>
+</LinearLayout>

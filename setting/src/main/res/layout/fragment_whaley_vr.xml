@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/about_whaley"
+        android:layout_marginTop="80dp" />
+
+    <TextView
+        android:id="@+id/vr_manager_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/color3"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_reserved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:includeFontPadding="false"
+        android:text="@string/user_2016whaley"
+        android:textColor="@color/color8"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/user_agreement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_reserved"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/user_agreement"
+        android:textColor="@color/color4"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_trade"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_enter_qq"
+        android:textColor="@color/color4"
+        android:textSize="13sp"
+        android:text="@string/trade"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="146.7dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_enter_qq"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_enter_qq"
+        android:textColor="@color/color4"
+        android:textSize="13sp"
+        android:text="@string/enter_qq"
+        android:layout_above="@+id/tv_trade"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

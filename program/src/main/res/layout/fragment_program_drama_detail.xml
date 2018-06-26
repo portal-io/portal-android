@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.whaley.biz.program.playersupport.widget.DramaPlayerView
+        android:id="@+id/playerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/btn_pay"
+        android:layout_width="332dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/playerview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_color15_fillet12"
+        android:gravity="center"
+        android:textColor="@color/color12"
+        android:textSize="@dimen/font_45" />
+
+
+    <ViewStub
+        android:id="@+id/vs_vr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_pay"
+        android:layout="@layout/layout_detail_vr"
+        />
+
+    <ViewStub
+        android:id="@+id/vs_movie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_pay"
+        android:layout="@layout/layout_detail_movie" />
+
+    <ViewStub
+        android:id="@+id/vs_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_pay"
+        android:layout="@layout/layout_detail_tv" />
+
+    <com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout
+        android:id="@+id/emptyLayout_half"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/playerview" />
+
+
+</RelativeLayout>

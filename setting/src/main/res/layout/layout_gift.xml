@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:id="@+id/layout_address"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="14dp"
+    android:paddingRight="10dp"
+    android:background="@color/color12"
+    android:visibility="gone">
+
+    <EditText
+        android:id="@+id/tv_address"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="left|center_vertical"
+        android:singleLine="true"
+        android:background="@android:color/transparent"
+        android:textCursorDrawable="@null"
+        android:focusable="false"
+        android:hint="还没有设定地址哦,万一中奖怎么办？"
+        android:textSize="12sp"
+        android:textColorHint="@color/color7"
+        android:textColor="@color/color3"/>
+
+    <TextView
+        android:id="@+id/btn_address"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="14dp"
+        android:background="@drawable/bg_modify_address"
+        android:textColor="@color/color1"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:text="添加"/>
+</LinearLayout>
+
+    <com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout
+        android:id="@+id/emptyGiftLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+    </com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout>
+
+</LinearLayout>

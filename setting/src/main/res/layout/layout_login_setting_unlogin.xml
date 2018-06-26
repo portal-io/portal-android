@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_unlogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="36dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="24dp"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/color12_alpha_30"
+            android:textSize="12sp"
+            android:text="您未登录" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_login"
+            android:textColor="@color/color12"
+            android:textSize="16sp"
+            android:text="登录"
+            android:padding="10dp"
+            android:includeFontPadding="false"/>
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="10dp"
+            android:background="@color/color12_alpha_50"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_register"
+            android:textColor="@color/color12"
+            android:textSize="16sp"
+            android:text="注册"
+            android:padding="10dp"
+            android:includeFontPadding="false"/>
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="23dp"
+            android:src="@mipmap/white_narrow"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

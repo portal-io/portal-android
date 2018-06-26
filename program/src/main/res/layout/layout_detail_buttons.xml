@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_buttons"
+    android:layout_width="match_parent"
+    android:layout_height="98dp"
+    android:orientation="horizontal"
+    android:layout_marginLeft="21dp"
+    android:layout_marginRight="21dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/layout_downlod"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_btn_detail_downlod_selector" />
+
+        <TextView
+            android:textSize="@dimen/font_42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缓存"
+            android:textColor="@color/color6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_collect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_btn_detail_collect_selector" />
+
+        <TextView
+            android:textSize="@dimen/font_42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加入播单"
+            android:textColor="@color/color6" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_share"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_btn_detail_share_selector" />
+
+        <TextView
+            android:textSize="@dimen/font_42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享"
+            android:textColor="@color/color6" />
+    </LinearLayout>
+
+
+</LinearLayout>

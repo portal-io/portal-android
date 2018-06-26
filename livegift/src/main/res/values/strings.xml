@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">livegift</string>
+
+    <string name="recharge">充值</string>
+
+    <string name="dialog_recharge">您需要登录才能充值\n确定登录吗？</string>
+    <string name="send_gift">送出</string>
+    <string name="reward_gift">打赏给%1$s</string>
+    <string name="send_reward_gift_name">为@%1$s 送出%2$s</string>
+    <string name="send_gift_name">送出%1$s</string>
+    <string name="whaley_money">鲸币</string>
+
+</resources>

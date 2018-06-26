@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_tool"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="10dp">
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="160dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_live_edit_shape"
+        android:drawableLeft="@mipmap/ic_barrage"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="你也来说两句吧~"
+        android:textColor="@color/color12_alpha_70"
+        android:textSize="@dimen/font_42" />
+
+    <ImageButton
+        android:id="@+id/btn_other_player"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:src="@drawable/bg_btn_live_launcher_selector" />
+
+    <Button
+        android:id="@+id/btn_definition"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@id/btn_other_player"
+        android:layout_alignWithParentIfMissing="true"
+        android:background="@drawable/bg_live_definition"
+        android:gravity="center"
+        android:text="流畅"
+        android:textColor="@color/color12"
+        android:textSize="@dimen/font_45" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btn_definition"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_gift"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="@null"
+            android:src="@drawable/btn_live_gift"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btn_change_camera"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="@null"
+            android:src="@drawable/btn_live_jiwei"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</RelativeLayout>

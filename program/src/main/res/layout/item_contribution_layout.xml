@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_contribution_item"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/size_60"
+        android:layout_marginRight="@dimen/size_60"
+        android:background="@color/color2_alpha_20" />
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="@dimen/size_102"
+        android:layout_height="@dimen/size_102"
+        android:layout_marginLeft="@dimen/size_60"
+        android:layout_centerVertical="true"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/space_30"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/iv_image"
+        android:layout_below="@id/view_line"
+        >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_36" />
+
+        <TextView
+            android:id="@+id/tv_contribute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/font_33" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color5"
+        android:textSize="@dimen/font_39"
+        android:layout_marginRight="@dimen/space_60"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        />
+
+    <ImageView
+        android:id="@+id/iv_login_user_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_contribution_me"
+        android:visibility="gone"
+        />
+</RelativeLayout>

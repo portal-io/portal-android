@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="33.3dp"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/color3"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="133.3dp"
+        android:paddingLeft="6.7dp"
+        android:paddingRight="14dp"
+        android:background="@color/color12">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/pic"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@color/color6"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:textColor="@color/color3"
+                android:textSize="19sp"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_redeem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color15"
+                    android:textSize="12sp"
+                    android:includeFontPadding="false"
+                    android:text="兑换码："/>
+
+                <TextView
+                    android:id="@+id/tv_redeem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color15"
+                    android:textSize="12sp"
+                    android:includeFontPadding="false"/>
+
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="13.3dp"
+                    android:text="复制"
+                    android:textSize="12sp"
+                    android:textColor="@color/color4"
+                    android:id="@+id/btn_redeem"
+                    android:background="@drawable/bg_redeem_copy"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_virtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color15"
+                android:textSize="12sp"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12">
+
+    <SurfaceView
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!--<com.whaley.vr.module.player.widget.vrplayerview.VRPlayerView-->
+    <!--android:id="@+id/vrplayerview"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:visibility="gone" />-->
+
+    <com.whaley.biz.launcher.widget.PlayerContainer
+        android:id="@+id/playerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_tab_height"
+
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/bottom_tab_height"
+        android:background="#D0D0D0" />
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_btns"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_tab_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color12"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_recommend"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_wave">
+
+            <TextView
+                android:id="@+id/tv_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/tab_recommend_selector"
+                android:gravity="center"
+                android:text="@string/tab_main_1"
+                android:textColor="@color/color_text_home_tab_selector"
+                android:textSize="9sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_live"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_wave">
+
+            <TextView
+                android:id="@+id/tv_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/tab_live_selector"
+                android:gravity="center"
+                android:text="@string/tab_main_2"
+                android:textColor="@color/color_text_home_tab_selector"
+                android:textSize="9sp" />
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/rl_launcher"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="@dimen/size_42"-->
+        <!--android:layout_marginRight="@dimen/size_42"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/tab_bg_wave">-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:gravity="center"-->
+        <!--android:src="@drawable/tab_launcher_selector" />-->
+
+        <!--</RelativeLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/rl_discover"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_wave">
+
+            <TextView
+                android:id="@+id/tv_discover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/tab_discover_selector"
+                android:gravity="center"
+                android:text="@string/tab_main_3"
+                android:textColor="@color/color_text_home_tab_selector"
+                android:textSize="9sp" />
+
+            <TextView
+                android:id="@+id/tv_follow_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:textColor="@color/color12"
+                android:textSize="@dimen/font_24"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_wave">
+
+            <TextView
+                android:id="@+id/tv_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/tab_user_selector"
+                android:gravity="center"
+                android:text="@string/tab_main_4"
+                android:textColor="@color/color_text_home_tab_selector"
+                android:textSize="9sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ViewStub
+        android:id="@+id/vs_spring_festival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="7dp"
+        android:layout="@layout/layout_spring_festival"/>
+
+    <ViewStub
+        android:id="@+id/vs_event_poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/layout_event_poster"/>
+
+    <ViewStub
+        android:id="@+id/vs_recommended_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/layout_recommend_content"/>
+
+</RelativeLayout>

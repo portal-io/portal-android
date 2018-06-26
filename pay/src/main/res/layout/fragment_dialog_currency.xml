@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color2_alpha_50"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/rl_redeem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/layout_redeem_select_box"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_top_fillet"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="131dp"
+                    android:layout_height="1px"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/color9" />
+
+                <View
+                    android:layout_width="131dp"
+                    android:layout_height="1px"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/color9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="11dp"
+                    android:text="订单"
+                    android:textColor="@color/color9"
+                    android:textSize="@dimen/font_30" />
+
+                <LinearLayout
+                    android:id="@+id/layout_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/view_line"
+                    android:layout_marginTop="25.3dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color3"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"/>
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="14dp"
+                        android:id="@+id/tv_prefer"
+                        android:background="@drawable/bg_currency_prefer"
+                        android:gravity="center"
+                        android:textColor="@color/color12"
+                        android:textSize="9sp"
+                        android:text="限时特惠"
+                        android:layout_marginLeft="5dp"
+                        android:includeFontPadding="false" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_preferName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color20_alpha_50"
+                    android:textSize="12sp"
+                    android:layout_below="@id/layout_name"
+                    android:layout_marginTop="10dp"
+                    android:includeFontPadding="false" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color15"
+                    android:textSize="15sp"
+                    android:layout_below="@id/view_line"
+                    android:layout_marginTop="26.7dp"
+                    android:layout_alignParentRight="true"
+                    android:includeFontPadding="false"/>
+
+                <TextView
+                    android:id="@+id/tv_preferPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color20_alpha_50"
+                    android:textSize="12sp"
+                    android:layout_below="@id/tv_price"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:includeFontPadding="false"/>
+
+                <TextView
+                    android:id="@+id/tv_price_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_preferName"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/color15_color16_selector"
+                    android:textSize="@dimen/font_39"
+                    android:includeFontPadding="false"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="332dp"
+                android:layout_height="8dp"
+                android:background="@mipmap/ic_round_slot" />
+
+            <FrameLayout
+                android:layout_width="332dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_bottom_fillet">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color8"
+                    android:textSize="@dimen/font_36" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_pay_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/layout_alipay"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_btn_color10_color12_passed_selector">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@mipmap/ic_pay_alipay"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="支付宝"
+                    android:textColor="@color/color3"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <View
+                android:id="@+id/view_fine_line"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color9" />
+
+            <FrameLayout
+                android:id="@+id/layout_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_btn_color10_color12_passed_selector">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@mipmap/ic_pay_wechat"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="微信支付"
+                    android:textColor="@color/color3"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_reappear"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/color12"
+                android:gravity="center"
+                android:text="重新支付"
+                android:textColor="@color/color3"
+                android:textSize="@dimen/font_45"
+                android:visibility="gone"/>
+            <View
+                android:id="@+id/view_crude_line"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/color10" />
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/color12"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/color1"
+                android:textSize="@dimen/font_45" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

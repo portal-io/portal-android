@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color10"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="163dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/bg_import_video_by_url"
+            android:gravity="left|top"
+            android:hint="请输入视频链接"
+            android:maxLength="140"
+            android:padding="13dp"
+            android:textColor="#2a2a2a"
+            android:textColorHint="#c9c9c9"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_import"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_blue"
+            android:gravity="center"
+            android:text="导入"
+            android:textColor="@color/color12"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        >
+
+        <ProgressBar
+            android:id="@+id/pb_size"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:progressDrawable="@drawable/progress_memory_drawable"
+            android:secondaryProgress="@color/color9"
+            android:progress="61"
+            />
+        <TextView
+            android:id="@+id/tv_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#646464"
+            android:text="手机存储空间：总空间24.6G / 剩余2.0G"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/emptyLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/view_convert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color11"
+        android:paddingTop="72dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_redemption_box"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_color12_frame1_color8_a50_fillet5"
+            android:elevation="20dp"
+            android:orientation="vertical"
+            android:transitionName="@string/convert_name">
+
+            <TextView
+                android:id="@+id/tv_redemption"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_color1_fillet5"
+                android:gravity="center"
+                android:text="兑换"
+                android:textColor="@color/color4_color12_selector"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edit_redemption"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/tv_redemption"
+                android:background="@null"
+                android:hint="&#160;请输入兑换码"
+                android:paddingLeft="11dp"
+                android:textColor="@color/color1"
+                android:textColorHint="@color/color8"
+                android:textCursorDrawable="@drawable/cursor_color6"
+                android:textSize="@dimen/font_54" />
+        </RelativeLayout>
+    </FrameLayout>
+</com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout>

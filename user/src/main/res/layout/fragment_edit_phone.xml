@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_old_phone"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_45" />
+
+        <TextView
+            android:id="@+id/tv_ori_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/font_45" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="40dp">
+
+        <com.whaley.biz.user.ui.widgets.EditLayout
+            android:id="@+id/et_new_phone"
+            android:layout_width="300dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_horizontal"
+            app:hint="@string/user_input_new_phone"
+            app:inputType="phone"></com.whaley.biz.user.ui.widgets.EditLayout>
+
+        <include layout="@layout/layout_login_valid_image" />
+
+        <include layout="@layout/layout_login_with_msg" />
+    </LinearLayout>
+</LinearLayout>

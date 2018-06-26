@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buy_set"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_135"
+    android:background="@color/color15"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_buy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_135"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/color12"
+        android:textSize="@dimen/font_45" />
+</FrameLayout>

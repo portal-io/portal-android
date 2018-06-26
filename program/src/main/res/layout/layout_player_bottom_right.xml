@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_bottom_right"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:gravity="center_vertical"
+    >
+
+    <ImageButton
+        android:id="@+id/btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingRight="6dp"
+        android:paddingLeft="10dp"
+        android:background="@null"
+        android:src="@drawable/btn_jiwei"
+        android:visibility="gone"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_switch_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:background="@null"
+        android:paddingBottom="14dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="7dp"
+        android:paddingTop="14dp"
+        android:src="@drawable/bg_btn_activity_player_switchscreen_selector"
+        />
+
+    <Button
+        android:id="@+id/btn_definition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/btn_other_player"
+        android:background="@null"
+        android:minHeight="20dp"
+        android:minWidth="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textSize="@dimen/font_39"
+        android:text="高清"
+        android:textColor="#FFFFFF" />
+
+    <ImageButton
+        android:id="@+id/btn_other_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:paddingBottom="14dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="14dp"
+        android:src="@drawable/bg_btn_player_launcher_selector" />
+</LinearLayout>

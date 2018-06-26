@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_validate_phone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="42dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <com.whaley.biz.user.ui.widgets.EditLayout
+                android:id="@+id/et_user_name"
+                android:layout_width="300dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_horizontal"
+                app:hint="@string/user_hint_phone"
+                app:inputType="phone" />
+
+            <include layout="@layout/layout_login_valid_image" />
+
+            <include layout="@layout/layout_login_with_msg" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_next"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="168dp"
+            android:background="@drawable/bg_login_selector"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/user_btn_next"
+            android:textColor="@color/color12"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_connect_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_next"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56.7dp"
+            android:padding="@dimen/size_30"
+            android:text="@string/user_connect_us"
+            android:textColor="@drawable/user_text_selector"
+            android:textSize="@dimen/font_45" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/layout_input_new_pwd"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

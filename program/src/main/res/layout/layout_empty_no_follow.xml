@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reset_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/size_132"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_no_follows" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_60"
+            android:text="@string/empty_no_follow"
+            android:textColor="@color/color_error_text_selector"
+            android:textSize="@dimen/font_39" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="@dimen/size_600"
+            android:layout_height="@dimen/size_120"
+            android:layout_marginTop="@dimen/space_90"
+            android:background="@drawable/bg_btn_color1"
+            android:text="登录"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_45" />
+    </LinearLayout>
+</FrameLayout>

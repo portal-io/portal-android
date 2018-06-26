@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/size_126"
+        app:hint="@string/user_hint_nickname" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:text="@string/user_edit_nickname"
+        android:textColor="@color/color8"
+        android:textSize="10sp" />
+
+    <com.whaley.biz.user.ui.widgets.EditLayout
+        android:id="@+id/et_password_regist"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        app:hint="@string/user_setting_password"
+        app:inputType="password"></com.whaley.biz.user.ui.widgets.EditLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:text="@string/user_edit_pwd"
+        android:textColor="@color/color8"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/bg_login_selector"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/user_title_register"
+        android:textColor="@color/color12"
+        android:textSize="15sp" />
+</LinearLayout>

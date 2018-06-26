@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">share</string>
+    <string name="copy_link">链接已成功复制到剪贴板</string>
+    <string name="share_live">VR直播|%1$s</string>
+    <string name="share_detail_title">VR全景丨%1$s</string>
+    <string name="share_topic_title">VR专区丨%1$s</string>
+    <string name="share_tv_movie_title">热门电影丨%1$s</string>
+    <string name="share_tv_series_title">电视剧丨%1$s</string>
+    <string name="share_link">复制链接</string>
+    <string name="share_mine_content">VR版《蒙面唱将猜猜猜》正在热播，1秒带你去现场！更多独家全景视频每天更新，还有明星演唱会、多项体育赛事登陆VR直播！
+</string>
+    <string name="share_mine_sine_content">VR版《蒙面唱将猜猜猜》正在热播，1秒带你去现场！更多独家全景视频每天更新，还有明星演唱会、多项体育赛事登陆VR直播！%1$s</string>
+    <string name="share_mine_title">微鲸VR-海量独家内容重磅来袭</string>
+    <string name="share_mine_weixin_circle_title">微鲸VR-VR版《蒙面唱将猜猜猜》正在热播，更多独家全景视频每天更新！</string>
+    <string name="share_news_title">VR资讯丨%1$s</string>
+    <string name="share_no_qq">沒有安装QQ</string>
+    <string name="share_no_weixin">沒有安装微信</string>
+    <string name="share_qq">QQ好友</string>
+    <string name="share_qzone">QQ空间</string>
+    <string name="share_sina">新浪微博</string>
+    <string name="share_sine">精彩就在@微鲸VR</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_topic_content">虚拟现实的任意门</string>
+    <string name="share_weixin">微信好友</string>
+    <string name="share_wx_circle">朋友圈</string>
+    <string name="trade_share_intro_weibo">微鲸VR专注于虚拟现实，是集硬件、软件、平台于一体的全生态企业，处于国内领先地位，在多领域已展开商业化应用。#微鲸VR#@微鲸VR</string>
+</resources>

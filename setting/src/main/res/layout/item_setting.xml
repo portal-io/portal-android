@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.whaley.biz.common.widget.SettingViewLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_setting"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:leftPaddingView="10dp"
+    app:rightPaddingView="10dp"
+    app:leftPaddingName="13dp"
+    app:rightPaddingPic="13dp" />

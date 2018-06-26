@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/iv_image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color2_alpha_50" />
+
+    <ImageView
+        android:id="@+id/iv_event_poster"
+        android:layout_width="match_parent"
+        android:layout_height="466.6dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:scaleType="fitXY" />
+
+
+    <com.whaley.biz.launcher.widget.RoundProgressBar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rp_bar"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="20dp"
+        app:interval="10"
+        app:max="5000"
+        app:roundColor="@color/color7"
+        app:roundProgressColor="@color/color12"
+        app:roundWidth="3dp" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_gravity="bottom|right"
+        android:padding="12dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/btn_ad_close_selector" />
+</FrameLayout>

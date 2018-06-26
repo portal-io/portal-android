@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GiftViewLayout">
+        <!--<attr name="nameText" format="reference|string" />-->
+        <!--<attr name="contentText" format="reference|string" />-->
+        <!--<attr name="leftPic" format="reference" />-->
+        <!--<attr name="rightPic" format="reference" />-->
+        <!--<attr name="viewHeight" format="reference|dimension" />-->
+        <!--<attr name="viewTopLine" format="reference|dimension" />-->
+        <!--<attr name="viewBottomLine" format="reference|dimension" />-->
+        <!--<attr name="lineBg" format="color|reference" />-->
+        <!--<attr name="topLineBg" format="color|reference" />-->
+        <!--<attr name="bottomLineBg" format="color|reference" />-->
+        <!--<attr name="viewBg" format="color|reference" />-->
+        <!--<attr name="nameTextColor" format="color|reference" />-->
+        <!--<attr name="contentTextColor" format="color|reference" />-->
+        <!--<attr name="nameTextSize" format="dimension|reference" />-->
+        <!--<attr name="contentTextSize" format="dimension|reference" />-->
+        <!--<attr name="leftPaddingView" format="reference|dimension" />-->
+        <!--<attr name="rightPaddingView" format="reference|dimension" />-->
+        <!--<attr name="leftPaddingPic" format="reference|dimension" />-->
+        <!--<attr name="rightPaddingPic" format="reference|dimension" />-->
+        <!--<attr name="leftPaddingName" format="reference|dimension" />-->
+        <!--<attr name="rightPaddingContent" format="reference|dimension" />-->
+        <!--<attr name="rightPaddingCheckbox" format="reference|dimension" />-->
+        <!--<attr name="checkboxPic" format="reference" />-->
+        <!--<attr name="canClick" format="reference|boolean" />-->
+        <!--<attr name="rightPaddingSegment" format="reference|dimension" />-->
+        <!--<attr name="segmentSize" format="reference|integer" />-->
+        <!--<attr name="segmentCheckedColor" format="color|reference" />-->
+        <!--<attr name="segmentUnCheckedColor" format="color|reference" />-->
+        <!--<attr name="segmentTextCheckedColor" format="color|reference" />-->
+        <!--<attr name="segmentTextUnCheckedColor" format="color|reference" />-->
+        <!--<attr name="segmentRadius" format="reference|dimension" />-->
+        <!--<attr name="segmentText1" format="reference|string" />-->
+        <!--<attr name="segmentText2" format="reference|string" />-->
+        <!--<attr name="segmentText3" format="reference|string" />-->
+        <!--<attr name="customizeViewId" format="reference" />-->
+    </declare-styleable>
+
+</resources>

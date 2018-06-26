@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="78dp" android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_intro"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/color6"
+        android:textSize="12sp"
+        android:text="鲸币说明"/>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="27dp"
+    android:background="@color/color2_alpha_00"
+    android:gravity="center_vertical"
+    android:text="我的券"
+    android:textColor="@color/color2"
+    android:textSize="@dimen/font_42"></TextView>

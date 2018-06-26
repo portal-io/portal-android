@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout
+        android:id="@+id/emptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yz.pullable.PullableLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/pullableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color12"
+            app:headerViewId="@+id/ivImage"
+            app:scrollViewId="@+id/rvList">
+
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="202.7dp"
+                android:scaleType="centerCrop" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="202.7dp" />
+
+        </com.yz.pullable.PullableLayout>
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_name"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="12dp"-->
+        <!--android:layout_marginTop="222.7dp"-->
+        <!--android:maxWidth="260dp"-->
+        <!--android:textColor="@color/color3"-->
+        <!--android:textSize="@dimen/font_51"-->
+        <!--android:textStyle="bold" />-->
+          <ViewStub
+              android:id="@+id/vs_movable"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout="@layout/layout_recyclerview"
+              />
+
+        <ImageView
+            android:id="@+id/iv_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="162.7dp"
+            android:src="@drawable/btn_topic_player_selector"
+            android:visibility="invisible" />
+
+
+    </com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout>
+
+    <com.whaley.core.widget.titlebar.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <ViewStub
+        android:id="@+id/vs_buy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_135"
+        android:layout_alignParentBottom="true"
+        android:layout="@layout/layout_buy_set" />
+</RelativeLayout>
+

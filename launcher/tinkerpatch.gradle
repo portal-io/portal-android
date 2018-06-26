@@ -1,0 +1,52 @@
+apply plugin: 'com.tencent.bugly.tinker-support'
+
+def bakPath = file("${buildDir}/bakApk/")
+
+def appName = "launcher-0402-16-45-48"
+
+tinkerSupport {
+
+    // 开启tinker-support插件，默认值true
+    enable = true
+
+    // 指定归档目录，默认值当前module的子目录tinker
+    autoBackupApkDir = "${bakPath}"
+
+    // 是否启用覆盖tinkerPatch配置功能，默认值false
+    // 开启后tinkerPatch配置不生效，即无需添加tinkerPatch
+    overrideTinkerPatchConfiguration = true
+
+    // 编译补丁包时，必需指定基线版本的apk，默认值为空
+    // 如果为空，则表示不是进行补丁包的编译
+    // @{link tinkerPatch.oldApk }
+    baseApk =  "${bakPath}/${appName}/WhaleyVR_v3.4.4_2018-04-02_16_45.apk"
+
+    // 对应tinker插件applyMapping
+    baseApkProguardMapping = "${bakPath}/${appName}/launcher-debug-mapping.txt"
+
+    // 对应tinker插件applyResourceMapping
+    baseApkResourceMapping = "${bakPath}/${appName}/launcher-release-R.txt"
+
+    // 唯一标识当前版本
+    tinkerId = gitSha()
+
+    //是否用于加固模式
+    isProtectedApp=true
+
+    // 是否开启代理Application，设置之后无须改造Application，默认为false
+    enableProxyApplication = false
+}
+
+
+
+def gitSha() {
+    try {
+        String gitRev = 'git rev-parse --short HEAD'.execute(null, project.rootDir).text.trim()
+        if (gitRev == null) {
+            throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
+        }
+        return gitRev
+    } catch (Exception e) {
+        throw new GradleException("can't get git rev, you should add git to system path or just input test value, such as 'testTinkerId'")
+    }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/color12"
+    >
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/font_45"
+        android:textColor="@color/color_live_danmu_send_text_selector"
+        android:layout_alignParentRight="true"
+        android:text="发送"
+        android:background="@null"
+        android:enabled="false"
+        />
+    <View
+        android:id="@+id/view_vertical_line"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="2px"
+        android:layout_height="match_parent"
+        android:background="@color/color9"
+        android:layout_toLeftOf="@id/btn_send"
+        />
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center_vertical"
+        android:textColorHint="@color/color8"
+        android:textColor="@color/color3"
+        android:textSize="@dimen/font_51"
+        android:layout_toLeftOf="@id/view_vertical_line"
+        android:hint="说点什么吧..."
+        android:background="@null"
+        android:imeOptions="flagNoExtractUi"
+        />
+</RelativeLayout>

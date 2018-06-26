@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color2"
+    android:orientation="vertical">
+
+    <com.whaley.biz.user.ui.widgets.ClipImageLayout
+        android:id="@+id/id_clipImageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/color2">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/size_30"
+            android:layout_weight="1"
+            android:background="@drawable/checkbtn_clip_avatar_cancel"
+            android:text="@string/cancel"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_45" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/size_30"
+            android:layout_weight="1"
+            android:background="@drawable/checkbtn_clip_avatar_confirm"
+            android:text="@string/text_avatar_set"
+            android:textColor="@color/color12"
+            android:textSize="@dimen/font_45" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout_card"
+        android:layout_width="254.3dp"
+        android:layout_height="302.7dp"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/bg_card_result">
+
+        <TextView
+            android:id="@+id/tv_title_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="73.3dp"
+            android:textColor="#FFD599"
+            android:textSize="11dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16.7dp"
+            android:layout_marginTop="68.3dp"
+            android:textColor="#FFD599"
+            android:textSize="11dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center_vertical|left"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="82.7dp"
+            android:src="@mipmap/bg_result_light" />
+
+        <FrameLayout
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="107.7dp"
+            android:background="@drawable/bg_springfestival_card"
+            android:rotation="-4">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/card_bg_red"
+                android:layout_gravity="center"/>
+
+            <com.whaley.biz.program.widget.SpringTextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#FFD599"
+                android:textSize="45dp" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="179.7dp"
+            android:textColor="#666666"
+            android:textSize="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center_vertical|left"/>
+
+        <TextView
+            android:id="@+id/tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:includeFontPadding="false"
+            android:textColor="#FFD599"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_collect"
+            android:layout_width="184.7dp"
+            android:layout_height="37.7dp"
+            android:layout_above="@id/tv_left"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/bg_card_collect"
+            android:textColor="#F34A3E"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/layout_card"
+        android:layout_alignRight="@id/layout_card"
+        android:layout_marginRight="-9.3dp"
+        android:padding="5dp"
+        android:background="@null"
+        android:src="@mipmap/bg_card_result_close" />
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">微鲸VR</string>
+    <string name="tab_main_1">首页</string>
+    <string name="tab_main_2">VR直播</string>
+    <string name="tab_main_3">关注</string>
+    <string name="tab_main_4">我</string>
+    <string name="user_login_success">登录成功</string>
+    <string name="exit_app">再按一次退出程序</string>
+</resources>

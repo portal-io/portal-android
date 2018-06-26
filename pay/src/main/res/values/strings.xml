@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pay</string>
+
+    <string name="text_try_the_show">试看%1$s，购买观看券即可获得完整视频</string>
+    <string name="pay_dialog_buy_pay">您需要登录才能购买\n确定登录吗？</string>
+    <string name="pay_live_content">购买成功后，同时开通直播回顾观看权</string>
+    <string name="pay_recorded_content">*视频版权期限截止至</string>
+    <string name="whaley_currency_over">（鲸币余额:%1$d）</string>
+</resources>

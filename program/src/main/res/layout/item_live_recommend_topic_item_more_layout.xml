@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:background="@drawable/bg_rectangle_gray_stroke_shape"
+    android:text="查看全部"
+    android:gravity="center"
+    android:textSize="@dimen/font_39"
+    android:textColor="@color/color5">
+
+</TextView>

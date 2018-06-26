@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/emptyLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:id="@+id/layout_live_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color12">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageButton
+            android:id="@+id/btn_reserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="6dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/btn_enter_reserve" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/shadow" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="49dp" />
+
+    <ViewStub
+        android:id="@+id/vs_tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/layout_tips" />
+
+</com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout>

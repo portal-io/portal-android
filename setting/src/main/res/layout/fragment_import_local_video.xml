@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"/>
+
+    <include layout="@layout/loading_layout" />
+
+    <RelativeLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color11"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="30dp"
+            android:drawableTop="@mipmap/local_empty"
+            android:gravity="center"
+            android:text="没有本地视频"
+            android:textColor="@color/load_fail_color"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_check"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color12"
+        android:clickable="true"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="2px"
+            android:layout_height="@dimen/size_72"
+            android:layout_centerInParent="true"
+            android:background="@color/color9" />
+
+        <TextView
+            android:id="@+id/tv_check"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/view_line"
+            android:gravity="center"
+            android:text="全选"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_48" />
+
+        <TextView
+            android:id="@+id/tv_import"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/view_line"
+            android:gravity="center"
+            android:textColor="@color/color19"
+            android:textSize="@dimen/font_48" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color9" />
+    </RelativeLayout>
+
+</RelativeLayout>

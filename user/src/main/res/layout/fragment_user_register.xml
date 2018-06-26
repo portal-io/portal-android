@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titlebar"
+        android:layout_marginTop="42dp">
+
+        <RelativeLayout
+            android:id="@+id/input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/layout_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.whaley.biz.user.ui.widgets.EditLayout
+                    android:id="@+id/et_phone"
+                    android:layout_width="300dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center_horizontal"
+                    app:hint="@string/user_hint_phone"
+                    app:inputType="phone" />
+
+                <include layout="@layout/layout_login_valid_image" />
+
+                <include layout="@layout/layout_login_with_msg" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_next"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:layout_below="@id/layout_phone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/user_login_selector"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/user_btn_next"
+                android:textColor="@color/color12"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_login_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <include layout="@layout/layout_login_enter" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_user_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="@string/user_register_user_agreement"
+                android:textColor="@color/color8"
+                android:textSize="@dimen/font_30"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <!--<include layout="@layout/layout_login_input_name" />-->
+
+    </FrameLayout>
+
+
+</RelativeLayout>

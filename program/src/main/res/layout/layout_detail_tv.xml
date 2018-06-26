@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/layout_program_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_marginTopPercent="4.64%h">
+
+        <TextView
+            android:id="@+id/tv_program_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:singleLine="true"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_54"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_play_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_program_name"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="12dp"
+            android:src="@mipmap/detail_play"
+            app:layout_marginTopPercent="3.04%h" />
+
+        <TextView
+            android:id="@+id/tv_play_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_program_name"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/iv_play_icon"
+            android:textColor="@color/color6"
+            android:textSize="@dimen/font_36"
+            app:layout_marginTopPercent="3.04%h" />
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/layout_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_program_name"
+            android:layout_marginLeft="@dimen/space_78"
+            android:layout_marginTop="@dimen/space_36"
+            android:layout_toRightOf="@id/tv_play_count"
+            app:auto_select_effect="false"
+            app:layout_marginTopPercent="3.04%h" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/layout_program_title"
+        android:layout_marginTop="24dp"
+        android:background="@color/color9"
+        app:layout_marginTopPercent="4.18%h" />
+
+    <include
+        android:id="@+id/layout_buttons"
+        layout="@layout/layout_detail_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp" />
+
+    <View
+        android:id="@+id/view_line3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_30"
+        android:layout_above="@id/layout_buttons"
+        android:background="@color/color10"
+        app:layout_heightPercent="2.28%h" />
+
+
+    <TextView
+        android:id="@+id/tv_moretv_description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_line"
+        android:layout_marginBottom="237dp"
+        android:layout_marginLeft="@dimen/space_42"
+        android:layout_marginRight="@dimen/space_42"
+        android:layout_marginTop="@dimen/space_48"
+        android:fadeScrollbars="false"
+        android:lineSpacingMultiplier="1.4"
+        android:scrollbars="none"
+        android:textColor="@color/color5"
+        app:layout_marginTopPercent="3.65%h" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_series"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_line"
+        android:layout_marginBottom="108dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_30"
+            android:background="@color/color10" />
+
+        <RelativeLayout
+            android:id="@+id/layout_series_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_150">
+
+            <TextView
+                android:id="@+id/tv_all_anthology_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:text="选集"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/font_39" />
+
+            <TextView
+                android:id="@+id/tv_all_series_unfold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/ic_tv_series_unfold"
+                android:gravity="center"
+                android:text="收起"
+                android:textColor="@color/color5"
+                android:textSize="@dimen/font_36" />
+
+            <View
+                android:id="@+id/view_all_series_line"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color6" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_all_series"
+            android:layout_width="match_parent"
+            android:layout_height="103dp"
+            android:background="@color/color11" />
+    </LinearLayout>
+
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

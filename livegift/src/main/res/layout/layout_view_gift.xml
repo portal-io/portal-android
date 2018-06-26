@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_gift_temp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/view_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_102"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_gift_reveal_shape"
+        android:paddingRight="@dimen/size_144">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/size_90"
+            android:layout_height="@dimen/size_90"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_6"
+            android:layout_marginRight="3dp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:textColor="@color/color6"
+            android:textSize="@dimen/font_36" />
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:textColor="@color/color15_alpha_70"
+            android:textSize="@dimen/font_36" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_gift_img"
+        android:layout_width="@dimen/size_108"
+        android:layout_height="@dimen/size_108"
+        android:layout_alignBottom="@id/view_gift"
+        android:layout_alignRight="@id/view_gift" />
+
+    <ImageView
+        android:id="@+id/iv_multiply"
+        android:layout_width="16.6dp"
+        android:layout_height="23.3dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_gift_img"
+        android:src="@mipmap/ic_multiply"
+        android:visibility="invisible" />
+
+    <com.whaley.biz.livegift.widget.RedoubleTextView
+        android:id="@+id/view_multiple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@id/iv_multiply"
+        android:textColor="#FF7676" />
+</RelativeLayout>

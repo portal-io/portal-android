@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color12"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:paddingLeft="7dp">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="33.3dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_search_bar"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:drawableLeft="@mipmap/seach_icon_seach"
+                android:drawablePadding="13dp"
+                android:gravity="center_vertical"
+                android:hint="搜索全部视频内容"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="#2a2a2a"
+                android:textColorHint="#c9c9c9"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="15sp" />
+
+            <RelativeLayout
+                android:id="@+id/layout_clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/btn_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:src="@mipmap/ico_delete_input" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/tv_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#2a2a2a"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color9" />
+
+    <FrameLayout
+        android:id="@+id/layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</LinearLayout>

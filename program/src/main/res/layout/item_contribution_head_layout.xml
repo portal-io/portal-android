@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/space_60"
+    android:paddingLeft="@dimen/space_22"
+    android:paddingRight="@dimen/space_22"
+    android:paddingTop="@dimen/space_60">
+
+    <LinearLayout
+        android:id="@+id/layout_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/space_33"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:id="@+id/layout_image_second_real"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@mipmap/bg_contribute_head_seconed">
+
+                <ImageView
+                    android:id="@+id/iv_image_second"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    />
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="53dp"
+                android:src="@mipmap/ic_contribute_tip_second" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_image_second_fake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_contribution_second_fake"
+            />
+
+        <TextView
+            android:id="@+id/tv_name_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_36"
+            android:text="骄傲的小仙女"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_contribute_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/font_33"
+            android:text="贡献6100鲸币"
+            android:gravity="center"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@mipmap/bg_contribute_head_first">
+
+                <ImageView
+                    android:id="@+id/iv_image_first"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    />
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="64dp"
+                android:src="@mipmap/ic_contribute_tip_first" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_name_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_36"
+            android:text="骄傲的小仙女"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_contribute_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/font_33"
+            android:text="贡献6100鲸币"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/space_33"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/layout_image_thrid_real"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@mipmap/bg_contribute_head_thrid">
+
+                <ImageView
+                    android:id="@+id/iv_image_thrid"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    />
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="53dp"
+                android:src="@mipmap/ic_contribute_tip_third" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_image_thrid_fake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_contribution_thrid_fake"
+            />
+
+        <TextView
+            android:id="@+id/tv_name_thrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/font_36"
+            android:text="骄傲的小仙女"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_contribute_thrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:textColor="@color/color5"
+            android:textSize="@dimen/font_33"
+            android:text="贡献6100鲸币"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+</LinearLayout>
