@@ -43,6 +43,7 @@ import com.whaley.biz.launcher.App;
 import com.whaley.biz.launcher.AppLike;
 import com.whaley.biz.launcher.adapter.MainFragmentAdapter;
 import com.whaley.biz.launcher.event.ConnectEvent;
+import com.whaley.biz.launcher.interactor.CheckLogin;
 import com.whaley.biz.launcher.model.NoticeModel;
 import com.whaley.biz.launcher.event.AdvertiseImageEvent;
 import com.whaley.biz.launcher.presenter.MainPresenter;
@@ -55,7 +56,11 @@ import com.whaley.biz.playerui.PlayerView;
 import com.whaley.biz.playerui.event.BackPressEvent;
 import com.whaley.biz.playerui.event.ModuleEvent;
 import com.whaley.biz.playerui.event.PlayerViewProviderEvent;
+import com.whaley.biz.portal.model.user.UserModel;
 import com.whaley.biz.program.playersupport.component.liveplayer.initblurbackground.InitBlurBackgroundUIAdapter;
+import com.whaley.biz.setting.router.GoPageUtil;
+import com.whaley.biz.setting.router.PageModel;
+import com.whaley.biz.setting.router.SettingRouterPath;
 import com.whaley.core.appcontext.AppContextProvider;
 import com.whaley.core.appcontext.Starter;
 import com.whaley.core.image.ImageLoader;
@@ -78,6 +83,8 @@ import java.lang.reflect.Method;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Author: qxw
@@ -444,9 +451,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
                     getPresenter().onLiveClick();
                     break;
                 case R.id.rl_portal:
-                    mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_PORTAL);
-                    setStatusBar();
-                    getPresenter().onPortalClick();
+                    clickPortal();
                     break;
                 case R.id.rl_discover:
                     mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_DISCOVER);
@@ -462,10 +467,42 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
                     getPresenter().onUserClick();
                     break;
             }
-//            if (view.getId() != R.id.rl_launcher) {
-            toggleButton(view.getId());
-//            }
+            if (view.getId() != R.id.rl_portal) {
+                toggleButton(view.getId());
+            }
         }
+    }
+
+    private void clickPortal() {
+        CheckLogin checkLogin = new CheckLogin();
+        checkLogin.buildUseCaseObservable(null).subscribe(new Observer<UserModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(UserModel userModel) {
+                if (userModel.isLoginUser()) {
+                    mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_PORTAL);
+                    setStatusBar();
+                    getPresenter().onPortalClick();
+                    toggleButton(R.id.rl_portal);
+                }else{
+                    getPresenter().goLogin();
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                getPresenter().goLogin();
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
     }
 
     private void toggleButton(int id) {

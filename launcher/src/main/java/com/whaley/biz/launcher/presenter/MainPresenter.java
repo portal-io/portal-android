@@ -12,6 +12,7 @@ import com.whaley.biz.common.model.hybrid.TitleBarModel;
 import com.whaley.biz.common.model.hybrid.WebviewGoPageModel;
 import com.whaley.biz.common.model.share.ShareModel;
 import com.whaley.biz.common.ui.BasePagePresenter;
+import com.whaley.biz.launcher.activitys.MainActivity;
 import com.whaley.biz.launcher.event.ModifyFestivalEvent;
 import com.whaley.biz.launcher.festival.FestivalManager;
 import com.whaley.biz.launcher.model.FestivalModel;
@@ -129,6 +130,10 @@ public class MainPresenter extends BasePagePresenter<MainView> {
         bundle.putParcelable(ProgramConstants.WEBVIEW_DATA, WebviewGoPageModel.createWebviewGoPageModel(url, titleBarModel, shareModel));
         pageModel.setBundle(bundle);
         GoPageUtil.goPage(getStater(), pageModel);
+    }
+
+    public void goLogin(){
+        com.whaley.biz.setting.router.GoPageUtil.goPage(getStater(), com.whaley.biz.setting.router.PageModel.obtain("/user/ui/login"));
     }
 
     public void showNotice() {
