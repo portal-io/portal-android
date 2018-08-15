@@ -1,276 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/bg_layout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="460dp"
-        android:background="@mipmap/bg_portal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/layout_header"
+            android:id="@+id/bg_layout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp">
+            android:layout_height="460dp"
+            android:background="@mipmap/bg_portal">
+
+            <RelativeLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="预售余额"
+                    android:textColor="@color/color12"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="说明"
+                    android:textColor="@color/color12"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <com.whaley.biz.portal.widget.ArcProgress
+                android:id="@+id/portal_progress"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/layout_header"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                custom:arc_angle="225"
+                custom:arc_finished_color="@color/color12_alpha_80"
+                custom:arc_progress="100"
+                custom:arc_stroke_width="1.3dp"
+                custom:arc_unfinished_color="@color/color12_alpha_40" />
 
             <TextView
+                android:id="@+id/tv_remain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="预售余额"
-                android:textSize="17sp"
+                android:layout_alignTop="@+id/portal_progress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp"
+                android:includeFontPadding="false"
+                android:text="当前余额"
+                android:textColor="@color/color12_alpha_80"
+                android:textSize="11sp" />
+
+            <TextSwitcher
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_remain"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:inAnimation="@anim/text_anim_in"
+                android:outAnimation="@anim/text_anim_out" />
+
+            <Button
+                android:id="@+id/btn_bind"
+                android:layout_width="90dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/tv_num"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_bind"
+                android:gravity="center"
                 android:textColor="@color/color12"
-                android:layout_centerInParent="true"/>
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/bottom_portal" />
+
+            <LinearLayout
+                android:id="@+id/btn_bubble1"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="65dp"
+                android:layout_marginLeft="28dp"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="41.6dp"
+                    android:layout_height="41.6dp"
+                    android:background="@mipmap/bubble_portal"
+                    android:clickable="false"
+                    android:textColor="@color/color12"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="今日奖励"
+                    android:textColor="@color/color12_alpha_80"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_bubble2"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="130dp"
+                android:layout_marginLeft="58dp"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="41.6dp"
+                    android:layout_height="41.6dp"
+                    android:background="@mipmap/bubble_portal"
+                    android:clickable="false"
+                    android:textColor="@color/color12"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="今日奖励"
+                    android:textColor="@color/color12_alpha_80"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_bubble3"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="178dp"
+                android:layout_marginLeft="118dp"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="41.6dp"
+                    android:layout_height="41.6dp"
+                    android:background="@mipmap/bubble_portal"
+                    android:clickable="false"
+                    android:textColor="@color/color12"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="今日奖励"
+                    android:textColor="@color/color12_alpha_80"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_bubble4"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
-                android:layout_centerVertical="true"
-                android:text="说明"
-                android:textSize="14sp"
-                android:textColor="@color/color12"/>
+                android:layout_marginBottom="178dp"
+                android:layout_marginRight="114dp"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="41.6dp"
+                    android:layout_height="41.6dp"
+                    android:background="@mipmap/bubble_portal"
+                    android:clickable="false"
+                    android:textColor="@color/color12"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="今日奖励"
+                    android:textColor="@color/color12_alpha_80"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_bubble5"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="130dp"
+                android:layout_marginRight="59dp"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="41.6dp"
+                    android:layout_height="41.6dp"
+                    android:background="@mipmap/bubble_portal"
+                    android:clickable="false"
+                    android:textColor="@color/color12"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="今日奖励"
+                    android:textColor="@color/color12_alpha_80"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_bubble6"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="65dp"
+                android:layout_marginRight="18dp"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="41.6dp"
+                    android:layout_height="41.6dp"
+                    android:background="@mipmap/bubble_portal"
+                    android:clickable="false"
+                    android:textColor="@color/color12"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="今日奖励"
+                    android:textColor="@color/color12_alpha_80"
+                    android:textSize="11sp" />
+            </LinearLayout>
 
         </RelativeLayout>
 
-        <com.whaley.biz.portal.widget.ArcProgress
-            android:id="@+id/portal_progress"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/layout_header"
-            android:layout_marginTop="5dp"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            custom:arc_angle="225"
-            custom:arc_unfinished_color="@color/color12_alpha_40"
-            custom:arc_finished_color="@color/color12_alpha_80"
-            custom:arc_stroke_width="1.3dp"
-            custom:arc_progress="100"/>
-
         <TextView
-            android:id="@+id/tv_remain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/portal_progress"
-            android:layout_marginTop="36dp"
-            android:text="当前余额"
-            android:textSize="11sp"
-            android:textColor="@color/color12_alpha_80"
-            android:layout_centerHorizontal="true"
-            android:includeFontPadding="false"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="14dp"
+            android:includeFontPadding="false"
+            android:text="最近收益记录"
+            android:textColor="#999999"
+            android:textSize="12sp" />
 
-        <TextSwitcher
-            android:id="@+id/tv_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_remain"
-            android:layout_marginTop="8dp"
-            android:layout_centerHorizontal="true"
-            android:inAnimation="@anim/text_anim_in"
-            android:outAnimation="@anim/text_anim_out" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></android.support.v7.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/btn_bind"
-            android:layout_width="90dp"
-            android:layout_height="20dp"
-            android:background="@drawable/bg_bind"
-            android:textColor="@color/color12"
-            android:textSize="12sp"
-            android:gravity="center"
-            android:layout_below="@+id/tv_num"
-            android:layout_marginTop="15dp"
-            android:layout_centerHorizontal="true"/>
+    </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/bottom_portal"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-
-        <LinearLayout
-            android:id="@+id/btn_bubble1"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="28dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="65dp"
-            android:gravity="center_horizontal"
-            android:clickable="true"
-            android:visibility="gone">
-            <Button
-                android:layout_width="41.6dp"
-                android:layout_height="41.6dp"
-                android:background="@mipmap/bubble_portal"
-                android:textColor="@color/color12"
-                android:textSize="11sp"
-                android:clickable="false"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="今日奖励"
-                android:textColor="@color/color12_alpha_80"
-                android:includeFontPadding="false"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_bubble2"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="58dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="130dp"
-            android:gravity="center_horizontal"
-            android:clickable="true"
-            android:visibility="gone">
-            <Button
-                android:layout_width="41.6dp"
-                android:layout_height="41.6dp"
-                android:background="@mipmap/bubble_portal"
-                android:textColor="@color/color12"
-                android:textSize="11sp"
-                android:clickable="false"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="今日奖励"
-                android:textColor="@color/color12_alpha_80"
-                android:includeFontPadding="false"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_bubble3"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="118dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="178dp"
-            android:gravity="center_horizontal"
-            android:clickable="true"
-            android:visibility="gone">
-            <Button
-                android:layout_width="41.6dp"
-                android:layout_height="41.6dp"
-                android:background="@mipmap/bubble_portal"
-                android:textColor="@color/color12"
-                android:textSize="11sp"
-                android:clickable="false"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="今日奖励"
-                android:textColor="@color/color12_alpha_80"
-                android:includeFontPadding="false"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_bubble4"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="114dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="178dp"
-            android:gravity="center_horizontal"
-            android:clickable="true"
-            android:visibility="gone">
-            <Button
-                android:layout_width="41.6dp"
-                android:layout_height="41.6dp"
-                android:background="@mipmap/bubble_portal"
-                android:textColor="@color/color12"
-                android:textSize="11sp"
-                android:clickable="false"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="今日奖励"
-                android:textColor="@color/color12_alpha_80"
-                android:includeFontPadding="false"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_bubble5"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="59dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="130dp"
-            android:gravity="center_horizontal"
-            android:clickable="true"
-            android:visibility="gone">
-            <Button
-                android:layout_width="41.6dp"
-                android:layout_height="41.6dp"
-                android:background="@mipmap/bubble_portal"
-                android:textColor="@color/color12"
-                android:textSize="11sp"
-                android:clickable="false"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="今日奖励"
-                android:textColor="@color/color12_alpha_80"
-                android:includeFontPadding="false"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_bubble6"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="18dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="65dp"
-            android:gravity="center_horizontal"
-            android:clickable="true"
-            android:visibility="gone">
-            <Button
-                android:layout_width="41.6dp"
-                android:layout_height="41.6dp"
-                android:background="@mipmap/bubble_portal"
-                android:textColor="@color/color12"
-                android:textSize="11sp"
-                android:clickable="false"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:text="今日奖励"
-                android:textColor="@color/color12_alpha_80"
-                android:includeFontPadding="false"/>
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="14dp"
-        android:text="最近收益记录"
-        android:textSize="12sp"
-        android:textColor="#999999"
-        android:includeFontPadding="false"/>
-    
-    <android.support.v7.widget.RecyclerView 
-        android:id="@+id/recycleView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></android.support.v7.widget.RecyclerView>
-
-</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

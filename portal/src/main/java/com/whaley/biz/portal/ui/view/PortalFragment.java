@@ -97,6 +97,8 @@ public class PortalFragment extends RecyclerLoaderFragment<PortalPresenter, Port
     protected void setViews(View view, @Nullable Bundle savedInstanceState) {
         super.setViews(view, savedInstanceState);
         requestManager = ImageLoader.with(this);
+        getRecyclerView().setNestedScrollingEnabled(false);
+        getRecyclerView().setFocusableInTouchMode(false);
         buttonList = new ArrayList<LinearLayout>() {{
             add(btnBubble1);
             add(btnBubble2);
