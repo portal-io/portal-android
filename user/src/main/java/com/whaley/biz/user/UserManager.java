@@ -136,6 +136,8 @@ public class UserManager {
             userModel.setAccessTokenModel(this.userModel.getAccessTokenModel());
             userModel.setDeviceId(this.userModel.getDeviceId());
             userModel.setAvatarTime(this.userModel.getAvatarTime());
+            userModel.setPortalAccessToken(this.userModel.getPortalAccessToken());
+            userModel.setPortalAddress(this.userModel.getPortalAddress());
             saveUser(userModel);
         }
     }

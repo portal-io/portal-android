@@ -8,7 +8,6 @@ import com.whaley.biz.program.constants.PlayerDataConstants;
 import com.whaley.biz.program.playersupport.component.normalplayer.resolvedefinition.RenderTypeUtil;
 import com.whaley.biz.program.playersupport.event.RenderTypeSelectedEvent;
 import com.whaley.biz.program.playersupport.event.ToggleRenderBoxVisibleEvent;
-import com.whaley.core.debug.logger.Log;
 import com.whaley.wvrplayer.vrplayer.external.event.VideoConstantValue;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -36,6 +35,7 @@ public class RenderBoxController extends ControlController<RenderBoxUIAdapter> {
     }
 
     public void onRenderTypeSelected(String renderTypeStr, String formatRenderTypeStr) {
+
         int renderType = RenderTypeUtil.getRenderTypeByRenderTypeStr(renderTypeStr);
         PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
         playData.putCustomData(PlayerDataConstants.CURRENT_RENDER_TYPE, renderTypeStr);

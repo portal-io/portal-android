@@ -46,13 +46,5 @@ public class LocalBottomUIAdapter extends BottomControlUIAdapter<LocalBottomUICo
         btnChangeRender.setVisibility(View.VISIBLE);
     }
 
-    public void setMonocular(boolean isMonocular){
-        if(isMonocular){
-            btnOtherPlayer.setImageResource(R.drawable.bg_btn_player_launcher_selector);
-        }else{
-            btnOtherPlayer.setImageResource(R.drawable.bg_btn_player_split_selector);
-        }
-    }
-
 }
 

@@ -1,0 +1,11 @@
+
+{
+    "Language" : "Chinese",
+    "LogEnable" : true,
+    "LogToFile" : true,
+    "LogToScreen" : false,
+    "BuildTime"   : "",
+    "Revision"    : 0,
+    "Version"     : 0,
+	"VersionName" : "3.4.0"
+}

@@ -1,6 +1,5 @@
 package com.whaley.biz.program.playersupport.component.liveplayer.livebottomcontrol;
 
-import android.content.pm.ActivityInfo;
 import android.support.v4.util.SimpleArrayMap;
 import android.view.View;
 import android.widget.Toast;
@@ -25,7 +24,6 @@ import com.whaley.biz.program.playersupport.model.DefinitionModel;
 import com.whaley.biz.program.playersupport.model.MediaResultInfo;
 import com.whaley.biz.program.utils.UnityUtil;
 import com.whaley.core.appcontext.Starter;
-import com.whaley.core.debug.logger.Log;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -53,6 +51,8 @@ public class LiveBottomControlController extends ControlController<LiveBottomCon
     boolean isMultiPosition;
 
     boolean hasNextDefinition;
+
+    Disposable disposable;
 
     boolean isbanner;
 
@@ -94,24 +94,24 @@ public class LiveBottomControlController extends ControlController<LiveBottomCon
         getUIAdapter().updateDefinitionText(text);
     }
 
-//    @Subscribe(sticky = true)
-//    public void onChangeProgress(BaseEvent baseEvent){
-//        if(baseEvent.getEventType().equals("changeVideoProgress")){
-//            EventBus.getDefault().removeStickyEvent(baseEvent);
-//            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
-//            if(playData == null)
-//                return;
-//            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
-//            DefinitionModel currentDefinitionModel = playData.getCustomData(PlayerDataConstants.CURRENT_DEFINITION_MODEL);
-//            int definition = VideoBitType.covert(mediaResultInfo.getCurrentQuality());
-//            if(currentDefinitionModel!=null&&currentDefinitionModel.getDefinition()!=definition){
-//                SwitchDefinitionEvent switchDefinitionEvent = new SwitchDefinitionEvent();
-//                switchDefinitionEvent.setDefinition(definition);
-//                emitEvent(switchDefinitionEvent);
-//            }
-//            emitEvent(new BlankShowEvent());
-//        }
-//    }
+    @Subscribe(sticky = true)
+    public void onChangeProgress(BaseEvent baseEvent){
+        if(baseEvent.getEventType().equals("changeVideoProgress")){
+            EventBus.getDefault().removeStickyEvent(baseEvent);
+            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
+            if(playData == null)
+                return;
+            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
+            DefinitionModel currentDefinitionModel = playData.getCustomData(PlayerDataConstants.CURRENT_DEFINITION_MODEL);
+            int definition = VideoBitType.covert(mediaResultInfo.getCurrentQuality());
+            if(currentDefinitionModel!=null&&currentDefinitionModel.getDefinition()!=definition){
+                SwitchDefinitionEvent switchDefinitionEvent = new SwitchDefinitionEvent();
+                switchDefinitionEvent.setDefinition(definition);
+                emitEvent(switchDefinitionEvent);
+            }
+            emitEvent(new BlankShowEvent());
+        }
+    }
 
     public void onSwitchDefinitionClick() {
         if (!hasNextDefinition) {
@@ -137,17 +137,9 @@ public class LiveBottomControlController extends ControlController<LiveBottomCon
         if (isForbidClick()){
             return false;
         }
-        if(isLandScape()){
-            getPlayerController().setMonocular(!getPlayerController().getMonocular());
-        }else{
-            getUIAdapter().showToast("竖屏模式不支持分屏");
-        }
+        dispose();
+        disposable = UnityUtil.goPageProgram(getPlayerController(), true);
         return true;
-    }
-
-    @Override
-    public boolean isLandScape() {
-        return getActivity().getRequestedOrientation()== ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
     }
 
     protected boolean isForbidClick(){
@@ -222,6 +214,20 @@ public class LiveBottomControlController extends ControlController<LiveBottomCon
         }
     }
 
+    private void dispose() {
+        if (disposable != null) {
+            disposable.dispose();
+            disposable = null;
+        }
+    }
+
+    @Override
+    protected void onDispose() {
+        super.onDispose();
+        dispose();
+    }
+
+
     public void onGiftClick() {
         CheckLogin checkLogin = new CheckLogin();
         checkLogin.buildUseCaseObservable(null)
@@ -246,20 +252,20 @@ public class LiveBottomControlController extends ControlController<LiveBottomCon
                 });
     }
 
-//    @Override
-//    public void registEvents() {
-//        super.registEvents();
-//        if (!EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().register(this);
-//        }
-//    }
-//
-//    @Override
-//    public void unRegistEvents() {
-//        super.unRegistEvents();
-//        if (EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().unregister(this);
-//        }
-//    }
+    @Override
+    public void registEvents() {
+        super.registEvents();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+    }
+
+    @Override
+    public void unRegistEvents() {
+        super.unRegistEvents();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
 
 }

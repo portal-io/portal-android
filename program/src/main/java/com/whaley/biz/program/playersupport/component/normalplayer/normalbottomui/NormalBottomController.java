@@ -39,7 +39,11 @@ public class NormalBottomController<T extends NormalBottomUIAdapter> extends Bot
 
     boolean hasNextDefinition;
 
+    protected Disposable disposable;
+
     boolean isbanner;
+
+    long progress = -1;
 
     public NormalBottomController(boolean isbanner){
         this.isbanner = isbanner;
@@ -85,59 +89,59 @@ public class NormalBottomController<T extends NormalBottomUIAdapter> extends Bot
         getUIAdapter().updateDefinitionText(text);
     }
 
-//    @Subscribe
-//    public void onExitSplit(BaseEvent baseEvent){
-//        if(baseEvent.getEventType().equals("exitSplit")) {
-//            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
-//            if (playData != null && playData.getId().equals(baseEvent.getObject())) {
-//                Activity activity = getActivity();
-//                if (activity != null) {
-//                    int requestOrientation;
-//                    if (activity.getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
-//                        requestOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
-//                    } else {
-//                        return;
-//                    }
-//                    activity.setRequestedOrientation(requestOrientation);
-//                    ScreenChangedEvent screenChangedEvent = new ScreenChangedEvent();
-//                    screenChangedEvent.setRequestOrientation(requestOrientation);
-//                    emitStickyEvent(screenChangedEvent);
-//                }
-//            }
-//        }
-//    }
-//
-//    @Subscribe(sticky = true)
-//    public void onChangeProgress(BaseEvent baseEvent){
-//        if(baseEvent.getEventType().equals("changeVideoProgress") || baseEvent.getEventType().equals("changeDramaProgress")){
-//            EventBus.getDefault().removeStickyEvent(baseEvent);
-//            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
-//            if(playData == null)
-//                return;
-//            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
-//            DefinitionModel currentDefinitionModel = playData.getCustomData(PlayerDataConstants.CURRENT_DEFINITION_MODEL);
-//            int split_definition = VideoBitType.covert(mediaResultInfo.getCurrentQuality());
-//            if(currentDefinitionModel!=null&&currentDefinitionModel.getDefinition()!=split_definition){
-//                playData.setProgress(Long.valueOf(mediaResultInfo.getCurrentPosition()));
-//                int definition = split_definition;
-//                SwitchDefinitionEvent switchDefinitionEvent = new SwitchDefinitionEvent();
-//                switchDefinitionEvent.setDefinition(definition);
-//                emitEvent(switchDefinitionEvent);
-//            }else {
-//                if (playData.getId().equals(mediaResultInfo.getCode())) {
-//                    if(isbanner){
-//                        long currentProgress = Long.valueOf(mediaResultInfo.getCurrentPosition());
-//                        getUIAdapter().changeSeekProgress(currentProgress);
-//                        getUIAdapter().updateCurrentTimeText(StringFormatUtil.formatTime(currentProgress));
-//                        onSeekChanged(currentProgress);
-//                    }else {
-//                        progress = Long.valueOf(mediaResultInfo.getCurrentPosition());
-//                    }
-//                }
-//            }
-//            emitEvent(new BlankShowEvent());
-//        }
-//    }
+    @Subscribe
+    public void onExitSplit(BaseEvent baseEvent){
+        if(baseEvent.getEventType().equals("exitSplit")) {
+            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
+            if (playData != null && playData.getId().equals(baseEvent.getObject())) {
+                Activity activity = getActivity();
+                if (activity != null) {
+                    int requestOrientation;
+                    if (activity.getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+                        requestOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+                    } else {
+                        return;
+                    }
+                    activity.setRequestedOrientation(requestOrientation);
+                    ScreenChangedEvent screenChangedEvent = new ScreenChangedEvent();
+                    screenChangedEvent.setRequestOrientation(requestOrientation);
+                    emitStickyEvent(screenChangedEvent);
+                }
+            }
+        }
+    }
+
+    @Subscribe(sticky = true)
+    public void onChangeProgress(BaseEvent baseEvent){
+        if(baseEvent.getEventType().equals("changeVideoProgress") || baseEvent.getEventType().equals("changeDramaProgress")){
+            EventBus.getDefault().removeStickyEvent(baseEvent);
+            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
+            if(playData == null)
+                return;
+            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
+            DefinitionModel currentDefinitionModel = playData.getCustomData(PlayerDataConstants.CURRENT_DEFINITION_MODEL);
+            int split_definition = VideoBitType.covert(mediaResultInfo.getCurrentQuality());
+            if(currentDefinitionModel!=null&&currentDefinitionModel.getDefinition()!=split_definition){
+                playData.setProgress(Long.valueOf(mediaResultInfo.getCurrentPosition()));
+                int definition = split_definition;
+                SwitchDefinitionEvent switchDefinitionEvent = new SwitchDefinitionEvent();
+                switchDefinitionEvent.setDefinition(definition);
+                emitEvent(switchDefinitionEvent);
+            }else {
+                if (playData.getId().equals(mediaResultInfo.getCode())) {
+                    if(isbanner){
+                        long currentProgress = Long.valueOf(mediaResultInfo.getCurrentPosition());
+                        getUIAdapter().changeSeekProgress(currentProgress);
+                        getUIAdapter().updateCurrentTimeText(StringFormatUtil.formatTime(currentProgress));
+                        onSeekChanged(currentProgress);
+                    }else {
+                        progress = Long.valueOf(mediaResultInfo.getCurrentPosition());
+                    }
+                }
+            }
+            emitEvent(new BlankShowEvent());
+        }
+    }
 
     @Override
     public void onBufferingUpdate(BufferingUpdateEvent bufferingUpdateEvent) {
@@ -147,19 +151,19 @@ public class NormalBottomController<T extends NormalBottomUIAdapter> extends Bot
         }
     }
 
-//    @Subscribe
-//    public void onActivityResume(ActivityResumeEvent activityResumeEvent){
-//        resetProgress();
-//    }
-//
-//    private void resetProgress(){
-//        if(progress >= 0) {
-//            getUIAdapter().changeSeekProgress(progress);
-//            getUIAdapter().updateCurrentTimeText(StringFormatUtil.formatTime(progress));
-//            onSeekChanged(progress);
-//        }
-//        progress = -1;
-//    }
+    @Subscribe
+    public void onActivityResume(ActivityResumeEvent activityResumeEvent){
+        resetProgress();
+    }
+
+    private void resetProgress(){
+        if(progress >= 0) {
+            getUIAdapter().changeSeekProgress(progress);
+            getUIAdapter().updateCurrentTimeText(StringFormatUtil.formatTime(progress));
+            onSeekChanged(progress);
+        }
+        progress = -1;
+    }
 
     @Override
     protected boolean isRegistOrientation() {
@@ -192,19 +196,6 @@ public class NormalBottomController<T extends NormalBottomUIAdapter> extends Bot
         super.onSwitchToOtherOrientation(orientation);
     }
 
-    @Subscribe
-    public void onScreenChanged(ScreenChangedEvent screenChangedEvent){
-        super.onScreenChanged(screenChangedEvent);
-        if(!isLandScape()){
-            boolean isMonocular = getPlayerController().getMonocular();
-            if(!isMonocular) {
-                isMonocular = !isMonocular;
-                getPlayerController().setMonocular(isMonocular);
-                getUIAdapter().setMonocular(isMonocular);
-            }
-        }
-    }
-
     public void onSwitchDefinitionClick() {
         if (!hasNextDefinition) {
             Toast.makeText(getContext(), "当前视频没有可切换的清晰度", Toast.LENGTH_SHORT).show();
@@ -227,29 +218,38 @@ public class NormalBottomController<T extends NormalBottomUIAdapter> extends Bot
         if (isForbidClick()) {
             return false;
         }
-        if(!isLandScape()){
-            onSwitchScreenClick();
-        }
-        boolean isMonocular = !getPlayerController().getMonocular();
-        getPlayerController().setMonocular(isMonocular);
-        getUIAdapter().setMonocular(isMonocular);
+        dispose();
+        disposable = UnityUtil.goPageProgram(getPlayerController(), false);
         return true;
     }
 
-//    @Override
-//    public void registEvents() {
-//        super.registEvents();
-//        if (!EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().register(this);
-//        }
-//    }
-//
-//    @Override
-//    public void unRegistEvents() {
-//        super.unRegistEvents();
-//        if (EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().unregister(this);
-//        }
-//    }
+    protected void dispose(){
+        if(disposable!=null){
+            disposable.dispose();
+            disposable=null;
+        }
+    }
+
+    @Override
+    protected void onDispose() {
+        super.onDispose();
+        dispose();
+    }
+
+    @Override
+    public void registEvents() {
+        super.registEvents();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+    }
+
+    @Override
+    public void unRegistEvents() {
+        super.unRegistEvents();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
 
 }

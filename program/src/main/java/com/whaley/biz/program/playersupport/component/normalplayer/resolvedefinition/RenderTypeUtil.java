@@ -80,16 +80,6 @@ public class RenderTypeUtil {
                 case ServerRenderType.RENDER_TYPE_180_OCT_3D:
                     renderType = VideoConstantValue.MODE_OCTAHEDRON_HALF_STEREO_LR;
                     break;
-
-                case ServerRenderType.RENDER_TYPE_OCT_2D:
-                    renderType = VideoConstantValue.MODE_OCTAHEDRON;
-                    break;
-                case ServerRenderType.RENDER_TYPE_OCT_3D_LR:
-                    renderType = VideoConstantValue.MODE_OCTAHEDRON_STEREO_LR;
-                    break;
-                case ServerRenderType.RENDER_TYPE_OCT_3D_UD:
-                    renderType = VideoConstantValue.MODE_OCTAHEDRON_STEREO_TD;
-                    break;
             }
         }
         return renderType;

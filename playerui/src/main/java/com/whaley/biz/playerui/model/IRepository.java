@@ -77,15 +77,4 @@ public interface IRepository {
      */
     void setOnBuffering(boolean onBuffering);
 
-    /**
-     * 设置是否分屏模式
-     * @param isMonocular
-     */
-    void setMonocular(boolean isMonocular);
-
-    /**
-     * 获取是否分屏模式
-     */
-    boolean getMonocular();
-
 }

@@ -41,13 +41,9 @@ import io.reactivex.observers.DisposableObserver;
 
 public class BannerBottomUIController extends BottomControlController<BannerBottomUIAdapter> {
 
-    @Override
-    protected void onInit() {
-        super.onInit();
-        if(getPlayerController()!=null && !getPlayerController().getMonocular()) {
-            getPlayerController().setMonocular(true);
-        }
-    }
+    private int currentType;
+
+    Disposable disposable;
 
     @Subscribe(sticky = true)
     public void onSwitchBannerType(SwitchBannerTypeEvent switchBannerTypeEvent){
@@ -62,49 +58,80 @@ public class BannerBottomUIController extends BottomControlController<BannerBott
                 getUIAdapter().changeToLive();
                 break;
         }
+        currentType = switchBannerTypeEvent.getType();
     }
 
     @Override
     public void onVideoPrepared(VideoPreparedEvent videoPreparedEvent){
         super.onVideoPrepared(videoPreparedEvent);
         int type = videoPreparedEvent.getPlayData().getType();
-        getUIAdapter().changeOtherPlayerButtonVisible(type != PlayerType.TYPE_MORETV_TV && type != PlayerType.TYPE_MORETV_2D && type != PlayerType.TYPE_LIVE);
+        getUIAdapter().changeOtherPlayerButtonVisible(type != PlayerType.TYPE_MORETV_TV && type != PlayerType.TYPE_MORETV_2D);
     }
 
-//    @Subscribe(sticky = true)
-//    public void onChangeProgress(BaseEvent baseEvent){
-//        if(baseEvent.getEventType().equals("changeVideoProgress")){
-//            EventBus.getDefault().removeStickyEvent(baseEvent);
-//            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
-//            if(playData == null)
-//                return;
-//            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
-//            DefinitionModel currentDefinitionModel = playData.getCustomData(PlayerDataConstants.CURRENT_DEFINITION_MODEL);
-//            int definition = VideoBitType.covert(mediaResultInfo.getCurrentQuality());
-//            if(currentDefinitionModel!=null&&currentDefinitionModel.getDefinition()!=definition){
-//                playData.setProgress(Long.valueOf(mediaResultInfo.getCurrentPosition()));
-//                SwitchDefinitionEvent switchDefinitionEvent = new SwitchDefinitionEvent();
-//                switchDefinitionEvent.setDefinition(definition);
-//                emitEvent(switchDefinitionEvent);
-//            }else {
-//                if (playData.getId().equals(mediaResultInfo.getCode()) && currentType != SwitchBannerTypeEvent.TYPE_LIVE) {
-//                    long progress = Long.valueOf(mediaResultInfo.getCurrentPosition());
-//                    getUIAdapter().changeSeekProgress(progress);
-//                    getUIAdapter().updateCurrentTimeText(StringFormatUtil.formatTime(progress));
-//                    onSeekChanged(progress);
-//                }
-//            }
-//            emitEvent(new BlankShowEvent());
-//        }
-//    }
+    @Subscribe(sticky = true)
+    public void onChangeProgress(BaseEvent baseEvent){
+        if(baseEvent.getEventType().equals("changeVideoProgress")){
+            EventBus.getDefault().removeStickyEvent(baseEvent);
+            PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
+            if(playData == null)
+                return;
+            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
+            DefinitionModel currentDefinitionModel = playData.getCustomData(PlayerDataConstants.CURRENT_DEFINITION_MODEL);
+            int definition = VideoBitType.covert(mediaResultInfo.getCurrentQuality());
+            if(currentDefinitionModel!=null&&currentDefinitionModel.getDefinition()!=definition){
+                playData.setProgress(Long.valueOf(mediaResultInfo.getCurrentPosition()));
+                SwitchDefinitionEvent switchDefinitionEvent = new SwitchDefinitionEvent();
+                switchDefinitionEvent.setDefinition(definition);
+                emitEvent(switchDefinitionEvent);
+            }else {
+                if (playData.getId().equals(mediaResultInfo.getCode()) && currentType != SwitchBannerTypeEvent.TYPE_LIVE) {
+                    long progress = Long.valueOf(mediaResultInfo.getCurrentPosition());
+                    getUIAdapter().changeSeekProgress(progress);
+                    getUIAdapter().updateCurrentTimeText(StringFormatUtil.formatTime(progress));
+                    onSeekChanged(progress);
+                }
+            }
+            emitEvent(new BlankShowEvent());
+        }
+    }
 
     public void onSplitClick(){
         if (isForbidClick()) {
             return;
         }
-        onSwitchScreenClick();
-        if(getPlayerController()!=null) {
-            getPlayerController().setMonocular(false);
+        dispose();
+        boolean isLive = currentType == SwitchBannerTypeEvent.TYPE_LIVE;
+        disposable = UnityUtil.goPageProgram(getPlayerController(), isLive);
+//        onSwitchScreenClick();
+//        emitStickyEvent(new SplitEvent());
+    }
+
+    private void dispose(){
+        if(disposable!=null){
+            disposable.dispose();
+            disposable=null;
+        }
+    }
+
+    @Override
+    protected void onDispose() {
+        super.onDispose();
+        dispose();
+    }
+
+    @Override
+    public void registEvents() {
+        super.registEvents();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+    }
+
+    @Override
+    public void unRegistEvents() {
+        super.unRegistEvents();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
         }
     }
 

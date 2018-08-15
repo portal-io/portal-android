@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/layout_control"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<RelativeLayout
+    android:id="@+id/layout_title"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_gravity="top"
+    android:background="@color/color2_alpha_90">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/bg_btn_player_back_selector" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/btn_back"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/layout_bottom_controls"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:paddingRight="7dp"
+    android:layout_gravity="bottom"
+    android:background="@color/color2_alpha_90">
+
+    <ImageButton
+        android:id="@+id/btn_start_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/bg_btn_player_pause_selector" />
+
+    <TextView
+        android:id="@+id/tv_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/btn_start_pause"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/font_small" />
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_definition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:minHeight="20dp"
+            android:minWidth="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/font_39"
+            android:text="高清"
+            android:textColor="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btn_split"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingBottom="5dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/bg_exit_split_selector" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/layout_bottom_right"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/font_small" />
+
+    <SeekBar
+        android:id="@+id/sk_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/tv_total"
+        android:layout_toRightOf="@id/tv_current"
+        android:background="@null"
+        android:maxHeight="2dp"
+        android:minHeight="2dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="5dp"
+        android:progressDrawable="@drawable/bg_player_seekbar_style"
+        android:thumb="@mipmap/icon_player_seekbar_dot" />
+
+</RelativeLayout>
+
+</FrameLayout>

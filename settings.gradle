@@ -1,4 +1,4 @@
-include ':launcher', ':longconnection',
+include ':launcher', ':longconnection', ':portal',
         ':common',
         ':user',
         ':parser',
@@ -13,4 +13,5 @@ include ':launcher', ':longconnection',
         ':FrameRate',
         ':share',
         ':data-statistics',
-        ':livegift'
+        ':livegift',
+        ':unity'

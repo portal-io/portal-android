@@ -3,6 +3,7 @@ package com.whaley.biz.user.interactor;
 import android.app.Activity;
 import com.whaley.biz.user.UserManager;
 import com.whaley.biz.user.model.UserModel;
+import com.whaley.biz.user.model.portal.SyncResponse;
 import com.whaley.core.interactor.UseCase;
 import com.whaley.core.repository.IRepositoryManager;
 import com.whaley.core.repository.RepositoryManager;
@@ -41,7 +42,25 @@ public class MergeThirdLogin extends UseCase<UserModel, MergeThirdLogin.MergeThi
                         ThirdLogin thirdLogin = new ThirdLogin(RepositoryManager.create(null), Schedulers.io(), AndroidSchedulers.mainThread());
                         return thirdLogin.buildUseCaseObservable(thirdUserModel);
                     }
-                }).doOnNext(new Consumer<UserModel>() {
+                })
+                .observeOn(Schedulers.io())
+                .doOnNext(new Consumer<UserModel>() {
+                    @Override
+                    public void accept(final UserModel userModel) throws Exception {
+                        SyncPortal syncPortal = new SyncPortal(getRepositoryManager());
+                        syncPortal.buildUseCaseObservable(userModel.getAccount_id())
+                                .subscribe(new Consumer<SyncResponse>() {
+                                    @Override
+                                    public void accept(SyncResponse syncResponse) throws Exception {
+
+                                        userModel.setPortalAccessToken(syncResponse.getAccessTokenModel().getAccess_token());
+                                        userModel.setPortalAddress(syncResponse.getUserInfoModel().getPortalAddress());
+                                    }
+                                });
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(new Consumer<UserModel>() {
                     @Override
                     public void accept(@NonNull UserModel userModel) throws Exception {
                         if (!userModel.isAddInformation()) {

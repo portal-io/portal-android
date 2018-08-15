@@ -257,11 +257,6 @@ public interface IPlayerController {
     void setMonocular(boolean isMonocular);
 
     /**
-     * 获取是否分屏模式
-     */
-    boolean getMonocular();
-
-    /**
      * 设置播放器渲染 UI View 对象
      * @param playerView
      */

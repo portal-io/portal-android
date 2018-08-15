@@ -20,7 +20,8 @@ public class MainFragmentAdapter extends FragmentSwitchTabAdapter {
     public final static String TAB_LIVE = "live";
     public final static String TAB_DISCOVER = "discover";
     public final static String TAB_USER = "user";
-    private final static String[] TAB_TAGS = new String[]{TAB_RECOMMEND, TAB_LIVE, TAB_DISCOVER, TAB_USER};
+    public final static String TAB_PORTAL = "portal";
+    private final static String[] TAB_TAGS = new String[]{TAB_RECOMMEND, TAB_LIVE, TAB_DISCOVER, TAB_USER, TAB_PORTAL};
 
     private String secondaryTab;
 
@@ -58,6 +59,9 @@ public class MainFragmentAdapter extends FragmentSwitchTabAdapter {
                 break;
             case TAB_USER:
                 f = Router.getInstance().buildObj("/setting/ui/me").getObj();
+                break;
+            case TAB_PORTAL:
+                f = Router.getInstance().buildObj("/portal/ui/portal").getObj();
                 break;
         }
         return f;

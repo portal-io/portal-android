@@ -113,6 +113,8 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
     RelativeLayout rlRecommend;
     @BindView(R.id.rl_live)
     RelativeLayout rlLive;
+    @BindView(R.id.rl_portal)
+    RelativeLayout rlPortal;
     //    @BindView(R.id.rl_launcher)
 //    RelativeLayout rlLauncher;
     @BindView(R.id.rl_discover)
@@ -175,7 +177,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
             getPresenter().processNotice(notice);
         }
         initSystemBarManager();
-        mTabs = new View[]{rlRecommend, rlDiscover, rlLive, rlUser};
+        mTabs = new View[]{rlRecommend, rlDiscover, rlLive, rlUser, rlPortal};
         mainFragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager());
         if (savedInstanceState != null) {
             mainFragmentAdapter.onRestoreInstanceState(savedInstanceState);
@@ -292,7 +294,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
         playerView.requestLayout();
         for (int i = 0, j = layoutRootview.getChildCount() - 1; i <= j; i++) {
             View view = layoutRootview.getChildAt(i);
-            if (view != eventPoster && view != recommendedContent&&view!=vsEventPoster&&view!=vsRecommendedContent&&view!=vsSpringFestival)
+            if (view != eventPoster && view != recommendedContent && view != vsEventPoster && view != vsRecommendedContent && view != vsSpringFestival)
                 view.setVisibility(View.VISIBLE);
         }
         scrollPlayer();
@@ -427,7 +429,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
         systemBarManager = new SystemBarTintManager(this);
     }
 
-    @OnClick({R.id.rl_recommend, R.id.rl_live, R.id.rl_discover, R.id.rl_user})
+    @OnClick({R.id.rl_recommend, R.id.rl_live, R.id.rl_discover, R.id.rl_user, R.id.rl_portal})
     public void onClick(View view) {
         synchronized (lock) {
             switch (view.getId()) {
@@ -440,6 +442,11 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
                     mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_LIVE);
                     setStatusBar();
                     getPresenter().onLiveClick();
+                    break;
+                case R.id.rl_portal:
+                    mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_PORTAL);
+                    setStatusBar();
+                    getPresenter().onPortalClick();
                     break;
                 case R.id.rl_discover:
                     mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_DISCOVER);
@@ -459,7 +466,6 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
             toggleButton(view.getId());
 //            }
         }
-
     }
 
     private void toggleButton(int id) {
@@ -733,6 +739,9 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
                 case MainFragmentAdapter.TAB_USER:
                     rlUser.performClick();
                     break;
+                case MainFragmentAdapter.TAB_PORTAL:
+                    rlPortal.performClick();
+                    break;
                 default:
                     rlRecommend.performClick();
                     break;
@@ -767,7 +776,9 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
 
 
     private void setStatusBar() {
-        if (mainFragmentAdapter != null && mainFragmentAdapter.getmCurrentTag() != null && mainFragmentAdapter.getmCurrentTag().equals(MainFragmentAdapter.TAB_USER)) {
+        if (mainFragmentAdapter != null && mainFragmentAdapter.getmCurrentTag() != null
+                && (mainFragmentAdapter.getmCurrentTag().equals(MainFragmentAdapter.TAB_USER)
+                || mainFragmentAdapter.getmCurrentTag().equals(MainFragmentAdapter.TAB_PORTAL))) {
             StatusBarUtil.changeStatusBar(getWindow(), false, true);
             content.setPadding(0, 0, 0, 0);
         } else {

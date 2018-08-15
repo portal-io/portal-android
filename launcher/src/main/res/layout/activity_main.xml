@@ -89,23 +89,26 @@
                 android:textSize="9sp" />
         </RelativeLayout>
 
-        <!--<RelativeLayout-->
-        <!--android:id="@+id/rl_launcher"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginLeft="@dimen/size_42"-->
-        <!--android:layout_marginRight="@dimen/size_42"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@drawable/tab_bg_wave">-->
+        <RelativeLayout
+            android:id="@+id/rl_portal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_wave">
 
-        <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:gravity="center"-->
-        <!--android:src="@drawable/tab_launcher_selector" />-->
-
-        <!--</RelativeLayout>-->
+            <TextView
+                android:id="@+id/tv_potal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:button="@null"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/tab_portal_selector"
+                android:gravity="center"
+                android:text="Portal"
+                android:textColor="@color/color_text_home_tab_selector"
+                android:textSize="9sp" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rl_discover"
@@ -172,18 +175,18 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="70dp"
         android:layout_marginRight="7dp"
-        android:layout="@layout/layout_spring_festival"/>
+        android:layout="@layout/layout_spring_festival" />
 
     <ViewStub
         android:id="@+id/vs_event_poster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout="@layout/layout_event_poster"/>
+        android:layout="@layout/layout_event_poster" />
 
     <ViewStub
         android:id="@+id/vs_recommended_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout="@layout/layout_recommend_content"/>
+        android:layout="@layout/layout_recommend_content" />
 
 </RelativeLayout>

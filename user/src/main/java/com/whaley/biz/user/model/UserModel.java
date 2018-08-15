@@ -64,6 +64,9 @@ public class UserModel implements Parcelable {
     private String deviceId;
     private int is_upload_avatar;
 
+    private String portalAccessToken;
+    private String portalAddress;
+
     private String avatarTime;//本地数据方便记录本地图片改变
 
     public int getIs_upload_avatar() {
@@ -358,6 +361,8 @@ public class UserModel implements Parcelable {
         dest.writeByte(this.isAddInformation ? (byte) 1 : (byte) 0);
         dest.writeSerializable(this.accessTokenBean);
         dest.writeString(this.deviceId);
+        dest.writeString(this.portalAccessToken);
+        dest.writeString(this.portalAddress);
     }
 
     protected UserModel(Parcel in) {
@@ -389,6 +394,8 @@ public class UserModel implements Parcelable {
         this.isAddInformation = in.readByte() != 0;
         this.accessTokenBean = (AccessTokenModel) in.readSerializable();
         this.deviceId = in.readString();
+        this.portalAccessToken = in.readString();
+        this.portalAddress = in.readString();
     }
 
     public static final Creator<UserModel> CREATOR = new Creator<UserModel>() {
@@ -402,4 +409,20 @@ public class UserModel implements Parcelable {
             return new UserModel[size];
         }
     };
+
+    public String getPortalAccessToken() {
+        return portalAccessToken;
+    }
+
+    public void setPortalAccessToken(String portalAccessToken) {
+        this.portalAccessToken = portalAccessToken;
+    }
+
+    public String getPortalAddress() {
+        return portalAddress;
+    }
+
+    public void setPortalAddress(String portalAddress) {
+        this.portalAddress = portalAddress;
+    }
 }

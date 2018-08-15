@@ -19,6 +19,8 @@ public class UserModel implements Serializable {
     private String deviceId;
     private boolean isLoginUser;
 
+    private String portalAccessToken;
+    private String portalAddress;
 
     public String getNickename() {
         if (StrUtil.isEmpty(nickename)) {
@@ -84,5 +86,21 @@ public class UserModel implements Serializable {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getPortalAccessToken() {
+        return portalAccessToken;
+    }
+
+    public void setPortalAccessToken(String portalAccessToken) {
+        this.portalAccessToken = portalAccessToken;
+    }
+
+    public String getPortalAddress() {
+        return portalAddress;
+    }
+
+    public void setPortalAddress(String portalAddress) {
+        this.portalAddress = portalAddress;
     }
 }

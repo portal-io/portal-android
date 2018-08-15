@@ -8,7 +8,6 @@ import com.whaley.biz.playerui.event.BufferingUpdateEvent;
 import com.whaley.biz.playerui.event.ModuleEvent;
 import com.whaley.biz.playerui.event.PausedEvent;
 import com.whaley.biz.playerui.event.PollingEvent;
-import com.whaley.biz.playerui.event.ScreenChangedEvent;
 import com.whaley.biz.playerui.event.SeekUpdateEvent;
 import com.whaley.biz.playerui.event.StartedEvent;
 import com.whaley.biz.playerui.event.SwitchScreenEvent;

@@ -209,6 +209,10 @@ public class MainPresenter extends BasePagePresenter<MainView> {
     public void onLiveClick() {
     }
 
+    public void onPortalClick(){
+
+    }
+
     public void onDiscoverClick() {
         Router.getInstance().buildExecutor("/user/service/checklogin").callback(new Executor.Callback<UserModel>() {
             @Override

@@ -235,50 +235,50 @@ public class DramaSelectController extends BaseController<DramaSelectUIAdapter> 
         getEventBus().post(new ShowDramaSelectEvent(false));
     }
 
-//    @Subscribe(priority = 1)
-//    public void onExitSplitEvent(BaseEvent baseEvent){
-//        if(baseEvent.getEventType().equals("changeDramaProgress")){
-//            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
-//            NodeModel nodeModel = getPlayerController().getRepository().getCurrentPlayData().getCustomData(PlayerDataConstants.CURRENT_DRAMA_NODE);
-//            if(nodeModel!=null&&nodeModel.getCode()!=null&&nodeModel.getCode().equals(mediaResultInfo.getCurrentNode())){
-//                PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
-//                if(playData!=null&&playData.getId().equals(mediaResultInfo.getCode())&&mediaResultInfo.getNodeTrack()!=null
-//                        &&!mediaResultInfo.getNodeTrack().isEmpty()) {
-//                    playData.putCustomData(PlayerDataConstants.DRAMA_TRACK_LIST, mediaResultInfo.getNodeTrack());
-//                }
-//                //事件继续往下传递
-//            }else{
-//                EventController.cancelEventDelivery(baseEvent);
-//                PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
-//                if(playData!=null&&playData.getId().equals(mediaResultInfo.getCode())) {
-//                    if(mediaResultInfo.getNodeTrack()!=null
-//                            &&!mediaResultInfo.getNodeTrack().isEmpty()) {
-//                        playData.putCustomData(PlayerDataConstants.DRAMA_TRACK_LIST, mediaResultInfo.getNodeTrack());
-//                    }
-//                    NodeModel currentNodeModel = playData.getCustomData(mediaResultInfo.getCurrentNode());
-//                    if(currentNodeModel!=null) {
-//                        onNodeSelected(currentNodeModel, false, Long.valueOf(mediaResultInfo.getCurrentPosition()), false);
-//                    }
-//                }
-//            }
-//        }
-//    }
+    @Subscribe(priority = 1)
+    public void onExitSplitEvent(BaseEvent baseEvent){
+        if(baseEvent.getEventType().equals("changeDramaProgress")){
+            MediaResultInfo mediaResultInfo = baseEvent.getObject(MediaResultInfo.class);
+            NodeModel nodeModel = getPlayerController().getRepository().getCurrentPlayData().getCustomData(PlayerDataConstants.CURRENT_DRAMA_NODE);
+            if(nodeModel!=null&&nodeModel.getCode()!=null&&nodeModel.getCode().equals(mediaResultInfo.getCurrentNode())){
+                PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
+                if(playData!=null&&playData.getId().equals(mediaResultInfo.getCode())&&mediaResultInfo.getNodeTrack()!=null
+                        &&!mediaResultInfo.getNodeTrack().isEmpty()) {
+                    playData.putCustomData(PlayerDataConstants.DRAMA_TRACK_LIST, mediaResultInfo.getNodeTrack());
+                }
+                //事件继续往下传递
+            }else{
+                EventController.cancelEventDelivery(baseEvent);
+                PlayData playData = getPlayerController().getRepository().getCurrentPlayData();
+                if(playData!=null&&playData.getId().equals(mediaResultInfo.getCode())) {
+                    if(mediaResultInfo.getNodeTrack()!=null
+                            &&!mediaResultInfo.getNodeTrack().isEmpty()) {
+                        playData.putCustomData(PlayerDataConstants.DRAMA_TRACK_LIST, mediaResultInfo.getNodeTrack());
+                    }
+                    NodeModel currentNodeModel = playData.getCustomData(mediaResultInfo.getCurrentNode());
+                    if(currentNodeModel!=null) {
+                        onNodeSelected(currentNodeModel, false, Long.valueOf(mediaResultInfo.getCurrentPosition()), false);
+                    }
+                }
+            }
+        }
+    }
 
-//    @Override
-//    public void registEvents() {
-//        super.registEvents();
-//        if (!EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().register(this);
-//        }
-//    }
-//
-//    @Override
-//    public void unRegistEvents() {
-//        super.unRegistEvents();
-//        if (EventBus.getDefault().isRegistered(this)) {
-//            EventBus.getDefault().unregister(this);
-//        }
-//    }
+    @Override
+    public void registEvents() {
+        super.registEvents();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+    }
+
+    @Override
+    public void unRegistEvents() {
+        super.unRegistEvents();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
 
 
     //===================================互动剧选择剧情埋点=======================================//

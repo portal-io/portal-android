@@ -25,6 +25,16 @@ public class DramaBottomController extends NormalBottomController<DramaBottomUIA
         //
     }
 
+    @Override
+    public boolean onSplitClick() {
+        if (isForbidClick()) {
+            return false;
+        }
+        dispose();
+        disposable = UnityUtil.goPageDrama(getPlayerController());
+        return true;
+    }
+
     @Subscribe
     public void onModuleEvent(ModuleEvent moduleEvent) {
         if ("event/chunjie/activity".equals(moduleEvent.getEventName())) {

@@ -5,9 +5,12 @@ import android.content.res.Configuration;
 import com.whaley.biz.common.event.BaseEvent;
 import com.whaley.biz.common.model.bi.BIConstants;
 import com.whaley.biz.common.model.bi.LogInfoParam;
+import com.whaley.biz.common.response.PortalResponse;
 import com.whaley.biz.playerui.component.BaseController;
 import com.whaley.biz.playerui.event.ActivityPauseEvent;
+import com.whaley.biz.program.interactor.ReportPortal;
 import com.whaley.biz.program.model.ProgramDramaDetailModel;
+import com.whaley.biz.program.model.portal.PortalVideoModel;
 import com.whaley.biz.program.playersupport.event.ActivityResultEvent;
 import com.whaley.biz.playerui.event.ActivityResumeEvent;
 import com.whaley.biz.playerui.event.BufferingEvent;
@@ -33,6 +36,12 @@ import com.whaley.core.utils.StrUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Author: qxw
@@ -110,6 +119,7 @@ public class BIStatisticsController extends BaseController implements BIConstant
 
     private boolean isShare;
 
+    private Disposable reportDisposable;
 
     public BIStatisticsController(boolean isbanner) {
         this.isbanner = isbanner;
@@ -356,6 +366,9 @@ public class BIStatisticsController extends BaseController implements BIConstant
     protected void onPlayComplete() {
         LogInfoParam.Builder builder = getGeneralBuilder(ACTION_TYPE_END_PLAY);
         if (builder != null && startPlayTime != 0) {
+            if(!isbanner) {
+                reportPortal();
+            }
             setDuration(builder, playTime());
             setExitType(builder, EXIT_TYPE_SELFEND);
             saveLogInfo(builder);
@@ -369,6 +382,34 @@ public class BIStatisticsController extends BaseController implements BIConstant
 //        if (reportController != null && getViewData().getVrPanPlayerBean() != null) {
 //            reportController.reportEventOut(getGoodsType(), getViewData().getVrPanPlayerBean().itemid);
 //        }
+    }
+
+    private void reportPortal(){
+        if(reportDisposable!=null){
+            reportDisposable.dispose();
+        }
+        PlayData playData = getPlayData();
+        PortalVideoModel portalVideoModel = new PortalVideoModel(playData.getTitle(),playData.getId(),(int)(playTime()/1000));
+        ReportPortal reportPortal = new ReportPortal();
+        reportDisposable=reportPortal.buildUseCaseObservable(portalVideoModel)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<PortalResponse>() {
+                    @Override
+                    public void onNext(PortalResponse portalResponse) {
+                        //
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        //
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
 

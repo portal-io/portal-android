@@ -148,7 +148,7 @@ public class AppLike extends DefaultApplicationLike {
         Router.getInstance().buildExecutor("/parser/service/init").excute();
         Router.getInstance().buildExecutor("/hybrid/service/init").excute();
         Router.getInstance().buildExecutor("/playerui/service/init").excute();
-//        Router.getInstance().buildExecutor("/unity/service/init").excute();
+        Router.getInstance().buildExecutor("/unity/service/init").excute();
         Router.getInstance().buildExecutor("/pay/service/init").excute();
         Router.getInstance().buildExecutor("/share/service/init").excute();
         Router.getInstance().buildExecutor("/program/service/init").excute();

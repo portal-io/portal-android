@@ -30,8 +30,6 @@ public class Repository implements IRepository{
 
     private PlayerException playerException;
 
-    private boolean isMonocular;
-
     public void reset(){
         currentPlayData = null;
         isOnBuffering = false;
@@ -41,7 +39,6 @@ public class Repository implements IRepository{
         isStarted = false;
         isVideoPrepared = false;
         playerException = null;
-        isMonocular = true;
     }
 
     public void convertCurrentPlayData(PlayData currentPlayData){
@@ -110,16 +107,6 @@ public class Repository implements IRepository{
     @Override
     public void setOnBuffering(boolean onBuffering) {
         isOnBuffering = onBuffering;
-    }
-
-    @Override
-    public void setMonocular(boolean isMonocular) {
-        this.isMonocular = isMonocular;
-    }
-
-    @Override
-    public boolean getMonocular() {
-        return isMonocular;
     }
 
     public boolean isOnBuffering() {

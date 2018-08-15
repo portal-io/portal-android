@@ -36,4 +36,7 @@ public class BaseUrls {
     public static final String UPDATE_API = "http://vr-u.aginomoto.com/grouper-vr-upgrade/upgrade/vr/";
 
     public static final String UPDATE_API_TEST = "http://test-vr-u.aginomoto.com/grouper-vr-upgrade/upgrade/vr/";
+
+    public static final String WHALEY_PORTAL = "http://172.29.1.100/portal-app/";
+
 }

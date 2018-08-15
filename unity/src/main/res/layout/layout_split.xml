@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <include layout="@layout/split_touch"/>
+
+    <include layout="@layout/hot_spot"/>
+
+    <include layout="@layout/split_control"/>
+
+    <include layout="@layout/split_line"/>
+
+</FrameLayout>

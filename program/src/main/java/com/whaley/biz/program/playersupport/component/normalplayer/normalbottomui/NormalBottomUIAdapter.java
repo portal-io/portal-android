@@ -108,12 +108,4 @@ public class NormalBottomUIAdapter extends BottomControlUIAdapter<NormalBottomCo
         Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
-    public void setMonocular(boolean isMonocular){
-        if(isMonocular){
-            btnOtherPlayer.setImageResource(R.drawable.bg_btn_player_launcher_selector);
-        }else{
-            btnOtherPlayer.setImageResource(R.drawable.bg_btn_player_split_selector);
-        }
-    }
-
 }

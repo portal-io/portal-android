@@ -28,10 +28,10 @@ ext {
     ]
 
     lib = [
-            'player'         : 'com.whaley.lib:player:0.1.4',
+            'player'         : 'com.whaley.lib:player:0.1.5',
             'parser'         : 'com.whaley.lib:parser:0.0.2',
             'push'         : 'com.whaley.lib:push:0.0.2',
-            'pay'         : 'com.whaley.lib:pay:0.0.2',
+            'pay'         : 'com.whaley.lib:pay:0.0.3',
             'sign'        : 'com.whaley.lib:sign:0.0.3',
             'appcompat-v7': 'com.android.support:appcompat-v7:25.3.1',
             'rxandroid'   : 'io.reactivex.rxjava2:rxandroid:2.0.1',

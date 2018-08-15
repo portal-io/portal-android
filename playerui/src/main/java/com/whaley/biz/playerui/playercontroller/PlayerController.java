@@ -452,13 +452,7 @@ public class PlayerController implements IPlayerController, MediaPlayerListener 
 
     @Override
     public void setMonocular(boolean isMonocular) {
-        getRepository().setMonocular(isMonocular);
         getMediaPlayer().setMonocular(isMonocular);
-    }
-
-    @Override
-    public boolean getMonocular() {
-        return getRepository().getMonocular();
     }
 
     @Override

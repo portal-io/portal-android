@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/hot_spot"
+android:layout_width="150dp"
+android:layout_height="100dp"
+android:layout_gravity="center_horizontal"
+android:visibility="gone">
+
+<View
+    android:layout_width="62dp"
+    android:layout_height="62dp"
+    android:background="@drawable/bg_circle_hot_spot"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="13dp" />
+
+</FrameLayout>

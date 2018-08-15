@@ -20,7 +20,7 @@ public class RenderTypeCheckBox extends LinearLayout implements View.OnClickList
     Button btnPlane;
     Button btn360;
     Button btn180;
-    Button btnOct;
+
 
     Button btn2d;
     Button btn3dLr;
@@ -50,11 +50,9 @@ public class RenderTypeCheckBox extends LinearLayout implements View.OnClickList
         btnPlane=findView(R.id.btn_plane);
         btn360=findView(R.id.btn_360);
         btn180=findView(R.id.btn_180);
-        btnOct=findView(R.id.btn_oct);
         btnPlane.setTag(R.id.btn_plane,"平面");
         btn360.setTag(R.id.btn_360,"球面");
         btn180.setTag(R.id.btn_180,"半球");
-        btnOct.setTag(R.id.btn_oct,"八面体");
 
         btn2d=findView(R.id.btn_2d);
         btn3dLr=findView(R.id.btn_3d_lr);
@@ -64,19 +62,17 @@ public class RenderTypeCheckBox extends LinearLayout implements View.OnClickList
         btn2d.setTag(R.id.btn_plane,"2D");
         btn2d.setTag(R.id.btn_180,"PLANE");
         btn2d.setTag(R.id.btn_360,"2D");
-        btn2d.setTag(R.id.btn_oct,"2D");
+
 
         btn3dLr.setTag(R.id.btn_3d_lr,"3D左右");
         btn3dLr.setTag(R.id.btn_plane,"3D_LR");
         btn3dLr.setTag(R.id.btn_180,"3D_LF");
         btn3dLr.setTag(R.id.btn_360,"3D_LF");
-        btn3dLr.setTag(R.id.btn_oct,"3D_LR");
 
         btn3dUd.setTag(R.id.btn_3d_ud,"3D上下");
         btn3dUd.setTag(R.id.btn_plane,"3D_UD");
         btn3dUd.setTag(R.id.btn_180,"3D_UD");
         btn3dUd.setTag(R.id.btn_360,"3D_UD");
-        btn3dUd.setTag(R.id.btn_oct,"3D_UD");
 
         btn360.setSelected(true);
         btn2d.setSelected(true);
@@ -88,14 +84,13 @@ public class RenderTypeCheckBox extends LinearLayout implements View.OnClickList
         btn2d.setOnClickListener(this);
         btn3dLr.setOnClickListener(this);
         btn3dUd.setOnClickListener(this);
-        btnOct.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
 
-        if(id == R.id.btn_plane || id == R.id.btn_360 || id == R.id.btn_180 || id == R.id.btn_oct){
+        if(id == R.id.btn_plane || id == R.id.btn_360 || id == R.id.btn_180){
             if(v!=lastSelectedLeft) {
                 lastSelectedLeft.setSelected(false);
                 v.setSelected(true);
