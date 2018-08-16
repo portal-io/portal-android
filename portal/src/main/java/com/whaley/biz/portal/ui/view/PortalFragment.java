@@ -26,10 +26,12 @@ import com.whaley.biz.portal.ui.presenter.PortalPresenter;
 import com.whaley.biz.portal.ui.viewmodel.BubbleViewModel;
 import com.whaley.biz.portal.ui.viewmodel.PortalViewModel;
 import com.whaley.biz.portal.widget.ArcProgress;
+import com.whaley.core.debug.logger.Log;
 import com.whaley.core.image.ImageLoader;
 import com.whaley.core.image.ImageRequest;
 import com.whaley.core.widget.viewholder.ListAdapter;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -214,7 +216,9 @@ public class PortalFragment extends RecyclerLoaderFragment<PortalPresenter, Port
     private void addSum(BubbleViewModel bubbleViewModel){
         TextView current = (TextView)tvNum.getCurrentView();
         float num = Float.valueOf(current.getText().toString());
-        num += bubbleViewModel.getNum();
+        BigDecimal b1 = new BigDecimal(Float.toString(num));
+        BigDecimal b2 = new BigDecimal(Float.toString(bubbleViewModel.getNum()));
+        num = b1.add(b2).floatValue();
         tvNum.setText(String.valueOf(num));
     }
 

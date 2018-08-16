@@ -451,7 +451,7 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
                     getPresenter().onLiveClick();
                     break;
                 case R.id.rl_portal:
-                    clickPortal();
+                    clickPortal(false);
                     break;
                 case R.id.rl_discover:
                     mainFragmentAdapter.switchPage(MainFragmentAdapter.TAB_DISCOVER);
@@ -473,12 +473,13 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
         }
     }
 
-    private void clickPortal() {
+    @Override
+    public void clickPortal(final boolean isFromLogin) {
         CheckLogin checkLogin = new CheckLogin();
         checkLogin.buildUseCaseObservable(null).subscribe(new Observer<UserModel>() {
             @Override
             public void onSubscribe(Disposable d) {
-
+                //
             }
 
             @Override
@@ -489,18 +490,22 @@ public class MainActivity extends BaseMVPActivity<MainPresenter> implements Main
                     getPresenter().onPortalClick();
                     toggleButton(R.id.rl_portal);
                 }else{
-                    getPresenter().goLogin();
+                    if(!isFromLogin) {
+                        getPresenter().goLogin();
+                    }
                 }
             }
 
             @Override
             public void onError(Throwable e) {
-                getPresenter().goLogin();
+                if(!isFromLogin) {
+                    getPresenter().goLogin();
+                }
             }
 
             @Override
             public void onComplete() {
-
+                //
             }
         });
     }

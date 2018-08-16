@@ -20,4 +20,6 @@ public interface MainView extends BasePageView {
     void showSpringFestival();
 
     void hideSpringFestival();
+
+    void clickPortal(boolean isFromLogin);
 }

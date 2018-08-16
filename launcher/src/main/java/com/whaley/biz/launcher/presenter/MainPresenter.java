@@ -1,10 +1,12 @@
 package com.whaley.biz.launcher.presenter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.whaley.biz.common.CommonConstants;
 import com.whaley.biz.common.ShareTypeConstants;
+import com.whaley.biz.common.constants.RouterConstants;
 import com.whaley.biz.common.event.BaseEvent;
 import com.whaley.biz.common.event.EventController;
 import com.whaley.biz.common.model.bi.BIConstants;
@@ -25,6 +27,7 @@ import com.whaley.biz.program.constants.ProgramConstants;
 import com.whaley.biz.program.constants.ProgramRouterPath;
 import com.whaley.biz.program.uiview.model.PageModel;
 import com.whaley.biz.program.utils.GoPageUtil;
+import com.whaley.core.debug.logger.Log;
 import com.whaley.core.router.Executor;
 import com.whaley.core.router.Router;
 import com.whaley.core.share.ShareConstants;
@@ -46,6 +49,8 @@ import java.util.Map;
 public class MainPresenter extends BasePagePresenter<MainView> {
 
     String updateModel;
+
+    static final int REQUEST_CODE_PORTAL_LOGIN = 10001;
 
     public MainPresenter(MainView view) {
         super(view);
@@ -133,7 +138,11 @@ public class MainPresenter extends BasePagePresenter<MainView> {
     }
 
     public void goLogin(){
-        com.whaley.biz.setting.router.GoPageUtil.goPage(getStater(), com.whaley.biz.setting.router.PageModel.obtain("/user/ui/login"));
+        Router.getInstance().buildNavigation("/user/ui/login")
+                .setStarter(getStater())
+                .setRequestCode(REQUEST_CODE_PORTAL_LOGIN)
+                .withInt(RouterConstants.KEY_ACTIVITY_TYPE, 0)
+                .navigation();
     }
 
     public void showNotice() {
@@ -260,4 +269,15 @@ public class MainPresenter extends BasePagePresenter<MainView> {
     public void saveSplashTime(boolean isPoster) {
         SharedPreferencesUtil.setSplashTime(isPoster ? CommonConstants.KEY_POSTER : CommonConstants.KEY_CONTENT, System.currentTimeMillis());
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CODE_PORTAL_LOGIN){
+            if(getUIView()!=null){
+                getUIView().clickPortal(true);
+            }
+        }
+    }
+
 }
