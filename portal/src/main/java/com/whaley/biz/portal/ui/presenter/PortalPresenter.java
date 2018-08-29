@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import com.whaley.biz.common.exception.StatusErrorThrowable;
 import com.whaley.biz.common.interactor.LoaderUseCase;
 import com.whaley.biz.common.interactor.observer.ErrorHandleObserver;
+import com.whaley.biz.common.model.hybrid.TitleBarModel;
+import com.whaley.biz.common.model.hybrid.WebviewGoPageModel;
 import com.whaley.biz.common.ui.presenter.LoadPresenter;
 import com.whaley.biz.portal.interactor.CollectPortal;
 import com.whaley.biz.portal.interactor.GetEarning;
@@ -20,6 +22,7 @@ import com.whaley.biz.portal.ui.viewmodel.PortalViewModel;
 import com.whaley.biz.portal.utils.RelativeDateFormat;
 import com.whaley.core.inject.annotation.Repository;
 import com.whaley.core.inject.annotation.UseCase;
+import com.whaley.core.router.Router;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,6 +163,12 @@ public class PortalPresenter extends LoadPresenter<PortalView> {
         collectPortal.buildUseCaseObservable(new PortalCollectModel(code))
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe();
+    }
+
+    public void onIntroduce(){
+        WebviewGoPageModel webviewGoPageModel = WebviewGoPageModel.createWebviewGoPageModel("http://www.shangweitech.com/portal-static/index.html",
+                TitleBarModel.createTitleBarModel("说明"));
+        Router.getInstance().buildExecutor("/hybrid/service/goPage").putObjParam(webviewGoPageModel).excute();
     }
 
     @Override

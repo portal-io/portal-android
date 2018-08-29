@@ -30,6 +30,7 @@
                     android:textSize="17sp" />
 
                 <TextView
+                    android:id="@+id/tv_intro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"

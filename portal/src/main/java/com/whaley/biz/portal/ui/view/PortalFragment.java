@@ -68,6 +68,8 @@ public class PortalFragment extends RecyclerLoaderFragment<PortalPresenter, Port
     RelativeLayout bgLayout;
     @BindView(R2.id.btn_bind)
     Button btnBind;
+    @BindView(R2.id.tv_intro)
+    TextView tvIntro;
 
     private List<BubbleViewModel> bubbleViewModelList = new ArrayList<>();
 
@@ -133,6 +135,11 @@ public class PortalFragment extends RecyclerLoaderFragment<PortalPresenter, Port
     @OnClick(R2.id.btn_bind)
     public void onClickBind(){
         getPresenter().onBind();
+    }
+
+    @OnClick(R2.id.tv_intro)
+    public void onClickintro(){
+        getPresenter().onIntroduce();
     }
 
     @OnClick({R2.id.btn_bubble1, R2.id.btn_bubble2, R2.id.btn_bubble3, R2.id.btn_bubble4, R2.id.btn_bubble5, R2.id.btn_bubble6})
