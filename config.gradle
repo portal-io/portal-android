@@ -23,7 +23,7 @@ ext {
             'share'     : 'com.whaley.core:share:0.2.2',
             'uiframe'   : 'com.whaley.core:uiframe:0.1.0',
             'utils'     : 'com.whaley.core:utils:0.2.0',
-            'widget'    : 'com.whaley.core:widget:0.6.0',
+            'widget'    : 'com.whaley.core:widget:0.6.1',
             'uiview'    : 'com.whaley.core.widget:uiview:0.0.5'
     ]
 

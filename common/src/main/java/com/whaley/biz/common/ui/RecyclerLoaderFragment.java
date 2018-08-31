@@ -10,6 +10,7 @@ import com.whaley.biz.common.R;
 import com.whaley.biz.common.ui.presenter.LoadPresenter;
 import com.whaley.biz.common.widget.emptylayout.EmptyDisplayLayout;
 import com.whaley.core.uiframe.view.EmptyDisplayView;
+import com.whaley.core.widget.refresh.LoadMoreView;
 import com.whaley.core.widget.viewholder.ListAdapter;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public abstract class RecyclerLoaderFragment<PRESENTER extends LoadPresenter,DAT
 
     private ListAdapter adapter;
 
-
+    private LoadMoreView loadMoreView;
 
 
     @Override
@@ -73,10 +74,14 @@ public abstract class RecyclerLoaderFragment<PRESENTER extends LoadPresenter,DAT
 
     protected abstract ListAdapter onCreateAdapter();
 
+    protected boolean isAddScrollListener(){
+        return true;
+    }
+
     @Override
     protected void setUpLoadMore() {
         RecyclerView.Adapter recylerViewAdapter = (RecyclerView.Adapter) adapter;
-        getRefreshLayout().setAdapter(this.recyclerView, recylerViewAdapter, false);
+        loadMoreView = getRefreshLayout().setAdapter(this.recyclerView, recylerViewAdapter, false, isAddScrollListener());
         getRefreshLayout().getLoadMoreView().setListener(this);
     }
 
@@ -101,4 +106,7 @@ public abstract class RecyclerLoaderFragment<PRESENTER extends LoadPresenter,DAT
         onRefresh();
     }
 
+    public LoadMoreView getLoadMoreView() {
+        return loadMoreView;
+    }
 }

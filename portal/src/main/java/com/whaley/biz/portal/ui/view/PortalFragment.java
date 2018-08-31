@@ -5,6 +5,9 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -70,6 +73,8 @@ public class PortalFragment extends RecyclerLoaderFragment<PortalPresenter, Port
     Button btnBind;
     @BindView(R2.id.tv_intro)
     TextView tvIntro;
+    @BindView(R2.id.layout_root)
+    NestedScrollView layoutRoot;
 
     private List<BubbleViewModel> bubbleViewModelList = new ArrayList<>();
 
@@ -122,6 +127,24 @@ public class PortalFragment extends RecyclerLoaderFragment<PortalPresenter, Port
                 return tv;
             }
         });
+        layoutRoot.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                //判断是否滑到的底部
+                if (scrollY == (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight())) {
+                    if (getLoadMoreView() != null && getLoadMoreView().isHasMore()
+                            && getRecyclerView().getAdapter().getItemCount() > 0
+                            && !getLoadMoreView().isLoading()) {
+                        getLoadMoreView().startLoadMore();
+                    }
+                }
+            }
+        });
+    }
+
+    @Override
+    protected boolean isAddScrollListener() {
+        return false;
     }
 
     @Override
