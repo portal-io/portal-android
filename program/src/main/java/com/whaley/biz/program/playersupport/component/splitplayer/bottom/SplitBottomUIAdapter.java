@@ -64,6 +64,7 @@ public class SplitBottomUIAdapter extends NormalBottomUIAdapter {
             }
         });
         btnOtherPlayer = (ImageButton)view.findViewById(R.id.btn_other_player);;
+        btnOtherPlayer.setVisibility(View.GONE);
         btnOtherPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

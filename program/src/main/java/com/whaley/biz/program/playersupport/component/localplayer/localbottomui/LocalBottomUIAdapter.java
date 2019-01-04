@@ -24,6 +24,7 @@ public class LocalBottomUIAdapter extends BottomControlUIAdapter<LocalBottomUICo
         View layoutRight = vsRight.inflate();
         btnChangeRender = (Button)layoutRight.findViewById(R.id.btn_change_render);
         btnOtherPlayer = (ImageButton)layoutRight.findViewById(R.id.btn_other_player);;
+        btnOtherPlayer.setVisibility(View.GONE);
         btnOtherPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

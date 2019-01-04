@@ -49,6 +49,7 @@ public class LiveBottomControlUIAdapter extends ControlUIAdapter<LiveBottomContr
         btnDefinition = (Button) view.findViewById(R.id.btn_definition);
         btnChangeCamera = (ImageButton) view.findViewById(R.id.btn_change_camera);
         btnOtherPlayer = (ImageButton) view.findViewById(R.id.btn_other_player);
+        btnOtherPlayer.setVisibility(View.GONE);
         btnGift = (ImageButton) view.findViewById(R.id.btn_gift);
         btnEdit.setVisibility(View.INVISIBLE);
         btnEdit.setOnClickListener(new View.OnClickListener() {

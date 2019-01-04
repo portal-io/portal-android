@@ -50,6 +50,8 @@ public class NormalBottomUIAdapter extends BottomControlUIAdapter<NormalBottomCo
             }
         });
         btnOtherPlayer = (ImageButton) view.findViewById(R.id.btn_other_player);
+        btnOtherPlayer.setVisibility(View.GONE);
+
         btnOtherPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +95,7 @@ public class NormalBottomUIAdapter extends BottomControlUIAdapter<NormalBottomCo
     }
 
     public void changeOtherPlayerButtonVisible(boolean isVisible) {
-        btnOtherPlayer.setVisibility(isVisible ? View.VISIBLE : View.GONE);
+//        btnOtherPlayer.setVisibility(isVisible ? View.VISIBLE : View.GONE);
     }
 
     public void changeSwitchDefinitionEnable(boolean enable) {
