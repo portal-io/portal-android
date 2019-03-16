@@ -7,14 +7,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.3.2'
         classpath "com.tencent.bugly:tinker-support:latest.release"
 
         classpath "com.tencent.bugly:tinker-support:1.0.8"
 
         classpath 'com.novoda:bintray-release:0.8.1'
         //butterknife 支持library
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-rc2'
 
         classpath 'org.greenrobot:greendao-gradle-plugin:3.1.0'
     }

@@ -23,9 +23,7 @@
 
     <uses-feature android:name="android.hardware.nfc.hce"/>
 
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="23"/>
+    <uses-sdk android:targetSdkVersion="23"/>
 
     <application
         android:allowBackup="true"
