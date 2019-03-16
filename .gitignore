@@ -1,4 +1,7 @@
 # Built application files
+.DS_Store
+launcher/.DS_Store
+launcher/release/
 *.apk
 *.ap_
 *.DS_Store
